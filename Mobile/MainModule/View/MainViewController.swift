@@ -8,18 +8,23 @@
 //
 
 import UIKit
+import SnapKit
 
 class MainViewController: UIViewController {
 
 	var presenter: MainPresenterProtocol!
     var categoriesView: CategoriesView!
+    var categoriesCollectionView: UICollectionView!
+    var layout: UICollectionViewFlowLayout!
+    var categories: [String] = ["phones", "computer", "health", "book", "other"]
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        configureCategoriesView()
+        setupCategoriesView()
+        setupCollectionView()
     }
     
-    private func  configureCategoriesView() {
+    private func  setupCategoriesView() {
         categoriesView = CategoriesView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         view.addSubview(categoriesView)
         
@@ -31,6 +36,43 @@ class MainViewController: UIViewController {
             make.trailing.equalToSuperview()
             make.height.equalTo(200)
         }
+    }
+    
+    func setupCollectionView() {
+        layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        layout.itemSize = CGSize(width: 50, height: 50)
+        layout.scrollDirection = .horizontal
+        categoriesCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        categoriesCollectionView.backgroundColor = .clear
+        
+        categoriesView.addSubview(categoriesCollectionView)
+        
+        categoriesCollectionView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.top.equalTo(20)
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        
+        categoriesCollectionView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.reuseId)
+        
+        categoriesCollectionView.dataSource = self
+        categoriesCollectionView.delegate = self
+        
+    }
+}
+
+extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        categories.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
+        cell.categoryLabel.text = categories[indexPath.row]
+        cell.backgroundColor = .systemRed
+        return cell
     }
 }
 

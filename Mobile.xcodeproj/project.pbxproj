@@ -23,6 +23,7 @@
 		4975D48528B14946000C80DC /* Mark Pro Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4975D48428B14946000C80DC /* Mark Pro Heavy.ttf */; };
 		4975D48728B14953000C80DC /* Mark Pro Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4975D48628B14953000C80DC /* Mark Pro Medium.ttf */; };
 		4975D48928B15464000C80DC /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D48828B15464000C80DC /* Categories.swift */; };
+		4975D48D28B154E1000C80DC /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D48C28B154E1000C80DC /* CategoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		4975D48428B14946000C80DC /* Mark Pro Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Pro Heavy.ttf"; path = "../../../../../Downloads/OnlineWebFonts_COM_d7cf085250facdfe6d5af1d96777f54e/Mark Pro Heavy/Mark Pro Heavy.ttf"; sourceTree = "<group>"; };
 		4975D48628B14953000C80DC /* Mark Pro Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Pro Medium.ttf"; path = "../../../../../Downloads/OnlineWebFonts_COM_d7cf085250facdfe6d5af1d96777f54e/Mark Pro Medium/Mark Pro Medium.ttf"; sourceTree = "<group>"; };
 		4975D48828B15464000C80DC /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		4975D48C28B154E1000C80DC /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			children = (
 				4975D46228B12E4B000C80DC /* MainViewController.swift */,
 				4975D46B28B12F5A000C80DC /* CategoriesView.swift */,
+				4975D48C28B154E1000C80DC /* CategoryCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4975D48D28B154E1000C80DC /* CategoryCell.swift in Sources */,
 				4975D46C28B12F5A000C80DC /* CategoriesView.swift in Sources */,
 				4975D46728B12E58000C80DC /* MainPresenter.swift in Sources */,
 				4975D44A28B12C09000C80DC /* AppDelegate.swift in Sources */,
