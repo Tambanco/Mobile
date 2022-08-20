@@ -18,6 +18,7 @@
 		4975D46728B12E58000C80DC /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D46628B12E58000C80DC /* MainPresenter.swift */; };
 		4975D46928B12E64000C80DC /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D46828B12E64000C80DC /* MainModel.swift */; };
 		4975D46C28B12F5A000C80DC /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D46B28B12F5A000C80DC /* CategoriesView.swift */; };
+		4975D47228B1301A000C80DC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4975D47128B1301A000C80DC /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4975D47228B1301A000C80DC /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +132,9 @@
 			dependencies = (
 			);
 			name = Mobile;
+			packageProductDependencies = (
+				4975D47128B1301A000C80DC /* SnapKit */,
+			);
 			productName = Mobile;
 			productReference = 4975D44628B12C09000C80DC /* Mobile.app */;
 			productType = "com.apple.product-type.application";
@@ -158,6 +163,9 @@
 				Base,
 			);
 			mainGroup = 4975D43D28B12C09000C80DC;
+			packageReferences = (
+				4975D47028B1301A000C80DC /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 4975D44728B12C09000C80DC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -410,6 +418,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4975D47028B1301A000C80DC /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4975D47128B1301A000C80DC /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4975D47028B1301A000C80DC /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4975D45228B12C09000C80DC /* Mobile.xcdatamodeld */ = {
