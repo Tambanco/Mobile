@@ -12,10 +12,26 @@ import UIKit
 class MainViewController: UIViewController {
 
 	var presenter: MainPresenterProtocol!
+    var categoriesView: CategoriesView!
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemRed
+        configureCategoriesView()
+    }
+    
+    private func  configureCategoriesView() {
+        categoriesView = CategoriesView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        view.addSubview(categoriesView)
         
+        categoriesView.backgroundColor = .systemOrange
+        
+        categoriesView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.top.equalTo(self.view.safeAreaLayoutGuide)
+            make.trailing.equalToSuperview()
+            make.height.equalTo(200)
+        }
     }
 }
 
