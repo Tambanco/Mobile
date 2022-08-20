@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     var categoriesView: CategoriesView!
     var categoriesCollectionView: UICollectionView!
     var layout: UICollectionViewFlowLayout!
-    var categories: [String] = ["phones", "computer", "health", "books", "other"]
+    var categories: [String] = ["Phones", "Computer", "Health", "Books", "Other"]
 
 	override func viewDidLoad() {
         super.viewDidLoad()

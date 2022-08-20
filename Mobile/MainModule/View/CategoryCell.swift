@@ -25,6 +25,7 @@ class CategoryCell: UICollectionViewCell {
     lazy var categoryLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "MarkPro", size: 12)
+        label.textColor = UIColor(hexString: "010035")
         return label
     }()
     
