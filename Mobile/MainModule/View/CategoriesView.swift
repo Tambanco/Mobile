@@ -17,17 +17,17 @@ class CategoriesView: UIView {
     
     lazy var header: UILabel! = {
         let label = UILabel()
-        label.font = UIFont(name: "MarkPro-Heavy", size: 25)
+        label.font = UIFont(name: "MarkPro-Bold", size: 25)
         label.textColor = UIColor(hexString: "010035")
         label.text = "Select Category"
-        label.backgroundColor = .red
         return label
     }()
     
     lazy var viewAllButton: UIButton! = {
-        var config = UIButton.Configuration.borderless()
+        var config = UIButton.Configuration.plain()
+        config.title = "view all"
+        config.attributedTitle?.font = UIFont(name: "MarkPro", size: 17)
         let button = UIButton(configuration: config)
-        button.setTitle("view all", for: .normal)
         return button
     }()
     

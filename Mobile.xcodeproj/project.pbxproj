@@ -18,7 +18,10 @@
 		4975D46C28B12F5A000C80DC /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D46B28B12F5A000C80DC /* CategoriesView.swift */; };
 		4975D47228B1301A000C80DC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4975D47128B1301A000C80DC /* SnapKit */; };
 		4975D47928B1409D000C80DC /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D47828B1409D000C80DC /* HexColor.swift */; };
-		4975D47F28B1473A000C80DC /* Mark-Pro-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4975D47D28B146BF000C80DC /* Mark-Pro-Heavy.ttf */; };
+		4975D48128B1491A000C80DC /* Mark Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4975D48028B1491A000C80DC /* Mark Pro.ttf */; };
+		4975D48328B14932000C80DC /* Mark Pro Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4975D48228B14932000C80DC /* Mark Pro Bold.ttf */; };
+		4975D48528B14946000C80DC /* Mark Pro Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4975D48428B14946000C80DC /* Mark Pro Heavy.ttf */; };
+		4975D48728B14953000C80DC /* Mark Pro Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4975D48628B14953000C80DC /* Mark Pro Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +37,10 @@
 		4975D46828B12E64000C80DC /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		4975D46B28B12F5A000C80DC /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		4975D47828B1409D000C80DC /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
-		4975D47D28B146BF000C80DC /* Mark-Pro-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark-Pro-Heavy.ttf"; sourceTree = "<group>"; };
+		4975D48028B1491A000C80DC /* Mark Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Pro.ttf"; path = "../../../../../Downloads/OnlineWebFonts_COM_d7cf085250facdfe6d5af1d96777f54e/Mark Pro/Mark Pro.ttf"; sourceTree = "<group>"; };
+		4975D48228B14932000C80DC /* Mark Pro Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Pro Bold.ttf"; path = "../../../../../Downloads/OnlineWebFonts_COM_d7cf085250facdfe6d5af1d96777f54e/Mark Pro Bold/Mark Pro Bold.ttf"; sourceTree = "<group>"; };
+		4975D48428B14946000C80DC /* Mark Pro Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Pro Heavy.ttf"; path = "../../../../../Downloads/OnlineWebFonts_COM_d7cf085250facdfe6d5af1d96777f54e/Mark Pro Heavy/Mark Pro Heavy.ttf"; sourceTree = "<group>"; };
+		4975D48628B14953000C80DC /* Mark Pro Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Pro Medium.ttf"; path = "../../../../../Downloads/OnlineWebFonts_COM_d7cf085250facdfe6d5af1d96777f54e/Mark Pro Medium/Mark Pro Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +173,10 @@
 		4975D47E28B146C1000C80DC /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				4975D47D28B146BF000C80DC /* Mark-Pro-Heavy.ttf */,
+				4975D48628B14953000C80DC /* Mark Pro Medium.ttf */,
+				4975D48428B14946000C80DC /* Mark Pro Heavy.ttf */,
+				4975D48228B14932000C80DC /* Mark Pro Bold.ttf */,
+				4975D48028B1491A000C80DC /* Mark Pro.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -236,8 +245,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4975D48128B1491A000C80DC /* Mark Pro.ttf in Resources */,
+				4975D48528B14946000C80DC /* Mark Pro Heavy.ttf in Resources */,
 				4975D45928B12C0A000C80DC /* LaunchScreen.storyboard in Resources */,
-				4975D47F28B1473A000C80DC /* Mark-Pro-Heavy.ttf in Resources */,
+				4975D48328B14932000C80DC /* Mark Pro Bold.ttf in Resources */,
+				4975D48728B14953000C80DC /* Mark Pro Medium.ttf in Resources */,
 				4975D45628B12C0A000C80DC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

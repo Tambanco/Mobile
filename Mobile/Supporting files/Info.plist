@@ -4,10 +4,11 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string></string>
+		<string>Mark Pro.ttf</string>
+		<string>Mark Pro Medium.ttf</string>
+		<string>Mark Pro Bold.ttf</string>
+		<string>Mark Pro Heavy.ttf</string>
 	</array>
-	<key>Item 0</key>
-	<string>Mark-Pro-Heavy.ttf</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
