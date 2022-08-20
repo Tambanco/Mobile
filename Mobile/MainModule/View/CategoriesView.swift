@@ -17,9 +17,10 @@ class CategoriesView: UIView {
     
     lazy var header: UILabel! = {
         let label = UILabel()
-        label.font = UIFont(name: "MarkPro", size: 17)
+        label.font = UIFont(name: "MarkPro-Heavy", size: 25)
         label.textColor = UIColor(hexString: "010035")
         label.text = "Select Category"
+        label.backgroundColor = .red
         return label
     }()
     
@@ -50,7 +51,7 @@ class CategoriesView: UIView {
         
         viewAllButton.snp.makeConstraints { make in
             make.trailing.equalTo(-33)
-            make.top.equalTo(108)
+            make.top.equalTo(17)
         }
     }
     

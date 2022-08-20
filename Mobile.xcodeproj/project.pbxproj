@@ -18,6 +18,7 @@
 		4975D46C28B12F5A000C80DC /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D46B28B12F5A000C80DC /* CategoriesView.swift */; };
 		4975D47228B1301A000C80DC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4975D47128B1301A000C80DC /* SnapKit */; };
 		4975D47928B1409D000C80DC /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D47828B1409D000C80DC /* HexColor.swift */; };
+		4975D47F28B1473A000C80DC /* Mark-Pro-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4975D47D28B146BF000C80DC /* Mark-Pro-Heavy.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		4975D46828B12E64000C80DC /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		4975D46B28B12F5A000C80DC /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		4975D47828B1409D000C80DC /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
+		4975D47D28B146BF000C80DC /* Mark-Pro-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark-Pro-Heavy.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				4975D47428B13A27000C80DC /* Splash */,
 				4975D47628B13A58000C80DC /* Supporting files */,
 				4975D47A28B140A3000C80DC /* Utils */,
+				4975D47E28B146C1000C80DC /* Fonts */,
 			);
 			path = Mobile;
 			sourceTree = "<group>";
@@ -161,6 +164,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		4975D47E28B146C1000C80DC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4975D47D28B146BF000C80DC /* Mark-Pro-Heavy.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4975D45928B12C0A000C80DC /* LaunchScreen.storyboard in Resources */,
+				4975D47F28B1473A000C80DC /* Mark-Pro-Heavy.ttf in Resources */,
 				4975D45628B12C0A000C80DC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
