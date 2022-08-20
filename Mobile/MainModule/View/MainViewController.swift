@@ -16,19 +16,24 @@ class MainViewController: UIViewController {
     var categoriesView: CategoriesView!
     var categoriesCollectionView: UICollectionView!
     var layout: UICollectionViewFlowLayout!
-    var categories: [String] = ["phones", "computer", "health", "book", "other"]
+    var categories: [String] = ["phones", "computer", "health", "books", "other"]
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        setupMainView()
         setupCategoriesView()
         setupCollectionView()
+    }
+    
+    private func setupMainView() {
+        self.view.backgroundColor = UIColor(hexString: "#E5E5E5")
     }
     
     private func  setupCategoriesView() {
         categoriesView = CategoriesView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         view.addSubview(categoriesView)
         
-        categoriesView.backgroundColor = .systemOrange
+//        categoriesView.backgroundColor = .systemOrange
         
         categoriesView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
@@ -63,6 +68,8 @@ class MainViewController: UIViewController {
     }
 }
 
+
+// MARK: - CollectionView methods
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         categories.count
@@ -71,7 +78,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
         cell.categoryLabel.text = categories[indexPath.row]
-        cell.backgroundColor = .systemRed
+        cell.ellipseView.image = UIImage(named: "\(categories[indexPath.row])")
         return cell
     }
 }

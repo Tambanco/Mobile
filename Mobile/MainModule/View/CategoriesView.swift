@@ -27,6 +27,7 @@ class CategoriesView: UIView {
         var config = UIButton.Configuration.plain()
         config.title = "view all"
         config.attributedTitle?.font = UIFont(name: "MarkPro", size: 15)
+        config.baseForegroundColor = UIColor(hexString: "FF6E4E")
         let button = UIButton(configuration: config)
         return button
     }()

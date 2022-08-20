@@ -27,8 +27,8 @@
                                     <constraint firstAttribute="height" constant="132" id="bWQ-uM-crO"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Mrv-RT-71k">
-                                <rect key="frame" x="182" y="444" width="173" height="82"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Mrv-RT-71k">
+                                <rect key="frame" x="169" y="458" width="173" height="82"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ecommerce " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAe-bE-k0x">
                                         <rect key="frame" x="0.0" y="0.0" width="173" height="38.5"/>
@@ -48,8 +48,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.0" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Mrv-RT-71k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="169" id="7LD-sh-rZT"/>
                             <constraint firstItem="POR-p3-MLq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="382" id="DS1-SH-bg9"/>
                             <constraint firstItem="POR-p3-MLq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="135" id="P59-LA-IrE"/>
+                            <constraint firstItem="Mrv-RT-71k" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="414" id="VBl-1D-GrU"/>
                         </constraints>
                     </view>
                 </viewController>
