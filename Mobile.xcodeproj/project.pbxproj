@@ -15,9 +15,9 @@
 		4975D45628B12C0A000C80DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4975D45528B12C0A000C80DC /* Assets.xcassets */; };
 		4975D45928B12C0A000C80DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4975D45728B12C0A000C80DC /* LaunchScreen.storyboard */; };
 		4975D46428B12E4B000C80DC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D46228B12E4B000C80DC /* MainViewController.swift */; };
-		4975D46528B12E4B000C80DC /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4975D46328B12E4B000C80DC /* MainView.xib */; };
 		4975D46728B12E58000C80DC /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D46628B12E58000C80DC /* MainPresenter.swift */; };
 		4975D46928B12E64000C80DC /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D46828B12E64000C80DC /* MainModel.swift */; };
+		4975D46C28B12F5A000C80DC /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D46B28B12F5A000C80DC /* CategoriesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +31,9 @@
 		4975D45828B12C0A000C80DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4975D45A28B12C0A000C80DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4975D46228B12E4B000C80DC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		4975D46328B12E4B000C80DC /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		4975D46628B12E58000C80DC /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		4975D46828B12E64000C80DC /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		4975D46B28B12F5A000C80DC /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,12 +82,36 @@
 		4975D46A28B12E76000C80DC /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
-				4975D46228B12E4B000C80DC /* MainViewController.swift */,
-				4975D46328B12E4B000C80DC /* MainView.xib */,
-				4975D46628B12E58000C80DC /* MainPresenter.swift */,
-				4975D46828B12E64000C80DC /* MainModel.swift */,
+				4975D46D28B12F64000C80DC /* Model */,
+				4975D46F28B12F79000C80DC /* View */,
+				4975D46E28B12F6A000C80DC /* Presenter */,
 			);
 			path = MainModule;
+			sourceTree = "<group>";
+		};
+		4975D46D28B12F64000C80DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4975D46828B12E64000C80DC /* MainModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4975D46E28B12F6A000C80DC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4975D46628B12E58000C80DC /* MainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4975D46F28B12F79000C80DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4975D46228B12E4B000C80DC /* MainViewController.swift */,
+				4975D46B28B12F5A000C80DC /* CategoriesView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +173,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4975D45928B12C0A000C80DC /* LaunchScreen.storyboard in Resources */,
-				4975D46528B12E4B000C80DC /* MainView.xib in Resources */,
 				4975D45628B12C0A000C80DC /* Assets.xcassets in Resources */,
 				4975D45128B12C09000C80DC /* Main.storyboard in Resources */,
 			);
@@ -162,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4975D46C28B12F5A000C80DC /* CategoriesView.swift in Sources */,
 				4975D44E28B12C09000C80DC /* ViewController.swift in Sources */,
 				4975D46728B12E58000C80DC /* MainPresenter.swift in Sources */,
 				4975D44A28B12C09000C80DC /* AppDelegate.swift in Sources */,
