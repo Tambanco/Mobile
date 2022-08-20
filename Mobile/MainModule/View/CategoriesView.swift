@@ -26,7 +26,7 @@ class CategoriesView: UIView {
     lazy var viewAllButton: UIButton! = {
         var config = UIButton.Configuration.plain()
         config.title = "view all"
-        config.attributedTitle?.font = UIFont(name: "MarkPro", size: 17)
+        config.attributedTitle?.font = UIFont(name: "MarkPro", size: 15)
         let button = UIButton(configuration: config)
         return button
     }()

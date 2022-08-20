@@ -41,7 +41,7 @@ class MainViewController: UIViewController {
     func setupCollectionView() {
         layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 50, height: 50)
+        layout.itemSize = CGSize(width: 70, height: 70)
         layout.scrollDirection = .horizontal
         categoriesCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         categoriesCollectionView.backgroundColor = .clear
@@ -50,7 +50,7 @@ class MainViewController: UIViewController {
         
         categoriesCollectionView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
-            make.top.equalTo(20)
+            make.top.equalTo(54)
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
