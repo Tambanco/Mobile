@@ -45,8 +45,8 @@ class MainViewController: UIViewController {
     
     func setupCollectionView() {
         layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 70, height: 70)
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        layout.itemSize = CGSize(width: 90, height: 90)
         layout.scrollDirection = .horizontal
         categoriesCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         categoriesCollectionView.backgroundColor = .clear
@@ -64,10 +64,8 @@ class MainViewController: UIViewController {
         
         categoriesCollectionView.dataSource = self
         categoriesCollectionView.delegate = self
-        
     }
 }
-
 
 // MARK: - CollectionView methods
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -78,7 +76,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
         cell.categoryLabel.text = categories[indexPath.row]
-        cell.ellipseView.image = UIImage(named: "\(categories[indexPath.row])")
+        cell.ellipseView.image = UIImage(named: "\(categories[indexPath.row])")?.withAlignmentRectInsets(UIEdgeInsets(top: -5, left: -5, bottom: -5, right: -5))
         return cell
     }
 }

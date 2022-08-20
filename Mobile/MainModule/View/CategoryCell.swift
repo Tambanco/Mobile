@@ -13,7 +13,7 @@ class CategoryCell: UICollectionViewCell {
     
     lazy var ellipseView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .systemYellow
+        imageView.backgroundColor = UIColor(hexString: "FF6E4E")
         return imageView
     }()
     
