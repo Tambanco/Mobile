@@ -11,14 +11,32 @@ import UIKit
 import SnapKit
 
 class MainViewController: UIViewController {
+    private var presenter: MainPresenterProtocol!
+    private var categoriesView: CategoriesView!
+    private lazy var categoriesCollectionView = createCollectionView()
+    private var searchBarView: SearchBarView!
+    private var hotSalesView: HotSalesView!
+    private var hotSalesCollectionView: UICollectionView!
+    private var categories: [String] = ["Phones", "Computer", "Health", "Books", "Other"]
     
-    var presenter: MainPresenterProtocol!
-    var categoriesView: CategoriesView!
-    var categoriesCollectionView: UICollectionView!
-    var layout: UICollectionViewFlowLayout!
-    var searchBarView: SearchBarView!
-    var hotSalesView: HotSalesView!
-    var categories: [String] = ["Phones", "Computer", "Health", "Books", "Other"]
+    init(presenter: MainPresenterProtocol) {
+        self.presenter = presenter
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    private func createCollectionView() -> UICollectionView {
+        fatalError()
+    }
+//    convenience init() {
+//        self.init(presenter: MainPresenter())
+//
+//    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +45,32 @@ class MainViewController: UIViewController {
         setupCollectionView()
         setupSearchBarView()
         setupHotSalesView()
+        setupHotSalesCollectionView()
+    }
+    
+    private func setupHotSalesCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        layout.itemSize = CGSize(width: 90, height: 90)
+        layout.scrollDirection = .horizontal
+        hotSalesCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        hotSalesCollectionView.allowsMultipleSelection = false
+        hotSalesCollectionView.allowsSelection = true
+        hotSalesCollectionView.backgroundColor = .clear
+        
+        hotSalesView.addSubview(hotSalesCollectionView)
+        
+        hotSalesCollectionView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.top.equalTo(10)
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        
+        hotSalesCollectionView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.reuseId)
+        
+        hotSalesCollectionView.dataSource = self
+        hotSalesCollectionView.delegate = self
     }
     
     private func setupHotSalesView() {
@@ -51,6 +95,12 @@ class MainViewController: UIViewController {
         searchBarView.searchBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         let directionalMargins = NSDirectionalEdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 0)
         searchBarView.searchBar.directionalLayoutMargins = directionalMargins
+        
+        searchBarView.searchBar.layer.borderWidth = 0
+        searchBarView.searchBar.layer.borderColor = UIColor.clear.cgColor
+        
+        searchBarView.searchBar.searchTextField.layer.borderWidth = 0
+        searchBarView.searchBar.searchTextField.layer.borderColor = UIColor.clear.cgColor
         
         searchBarView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
@@ -77,7 +127,7 @@ class MainViewController: UIViewController {
     }
     
     func setupCollectionView() {
-        layout = UICollectionViewFlowLayout()
+        let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         layout.itemSize = CGSize(width: 90, height: 90)
         layout.scrollDirection = .horizontal
@@ -109,7 +159,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseId, for: indexPath) as! CategoryCell
         cell.categoryLabel.text = categories[indexPath.row]
         cell.categoryImageView.image = UIImage(named: "\(categories[indexPath.row])")
         
@@ -120,7 +170,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell else {
             return
         }
-        cell.ellipseView.backgroundColor = UIColor(hexString: "FF6E4E")
+//        cell.ellipseView.backgroundColor = UIColor(hexString: "FF6E4E")
         cell.categoryLabel.textColor = UIColor(hexString: "FF6E4E")
     }
     
@@ -128,7 +178,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell else {
             return
         }
-        cell.ellipseView.backgroundColor = UIColor(hexString: "FFFFFF")
+//        cell.ellipseView.backgroundColor = UIColor(hexString: "FFFFFF")
         cell.categoryLabel.textColor = UIColor(hexString: "010035")
     }
 }
@@ -137,3 +187,5 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
 extension MainViewController: MainViewProtocol {
     
 }
+
+

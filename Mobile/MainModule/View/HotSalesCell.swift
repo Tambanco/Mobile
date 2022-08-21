@@ -8,8 +8,6 @@
 import UIKit
 
 class HotSalesCell: UICollectionViewCell {
-    static let reuseId = "HotSalesCell"
-    
     lazy var bgImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = UIColor(hexString: "FFFFFF")
