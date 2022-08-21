@@ -15,7 +15,7 @@ class CategoriesView: UIView {
         return view
     }()
     
-    lazy var header: UILabel! = {
+    lazy var header: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "MarkPro-Bold", size: 25)
         label.textColor = UIColor(hexString: "010035")
@@ -23,7 +23,7 @@ class CategoriesView: UIView {
         return label
     }()
     
-    lazy var viewAllButton: UIButton! = {
+    lazy var viewAllButton: UIButton = {
         var config = UIButton.Configuration.plain()
         config.title = "view all"
         config.attributedTitle?.font = UIFont(name: "MarkPro", size: 15)
