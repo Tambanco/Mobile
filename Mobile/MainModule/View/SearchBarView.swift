@@ -17,6 +17,7 @@ class SearchBarView: UIView {
         let imageV = textFieldInsideSearchBar?.leftView as! UIImageView
         imageV.image = imageV.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
         imageV.tintColor = UIColor(hexString: "FF6E4E")
+        
         return searchBar
     }()
     
