@@ -76,7 +76,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
         cell.categoryLabel.text = categories[indexPath.row]
-        cell.ellipseView.image = UIImage(named: "\(categories[indexPath.row])")?.withAlignmentRectInsets(UIEdgeInsets(top: -5, left: -5, bottom: -5, right: -5))
+        cell.categoryImageView.image = UIImage(named: "\(categories[indexPath.row])")
         return cell
     }
 }

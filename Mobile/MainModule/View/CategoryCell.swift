@@ -13,13 +13,13 @@ class CategoryCell: UICollectionViewCell {
     
     lazy var ellipseView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = UIColor(hexString: "FF6E4E")
+        imageView.backgroundColor = UIColor(hexString: "FFFFFF")
         return imageView
     }()
     
-    lazy var categoryImage: UIImage = {
-        let image = UIImage()
-        return image
+    lazy var categoryImageView: UIImageView = {
+        let imageView = UIImageView()
+        return imageView
     }()
     
     lazy var categoryLabel: UILabel = {
@@ -35,6 +35,7 @@ class CategoryCell: UICollectionViewCell {
         ellipseView.layer.cornerRadius = 35
         
         addSubview(ellipseView)
+        addSubview(categoryImageView)
         addSubview(categoryLabel)
         
         ellipseView.snp.makeConstraints { make in
@@ -43,9 +44,16 @@ class CategoryCell: UICollectionViewCell {
             make.top.equalToSuperview()
         }
         
+        categoryImageView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalTo(40)
+            make.width.equalTo(29)
+            make.height.equalTo(31)
+        }
+        
         categoryLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(ellipseView.snp.bottom)
+            make.top.equalTo(ellipseView.snp.bottom).inset(-10)
         }
     }
     
