@@ -13,28 +13,43 @@ class SearchBarView: UIView {
         return searchBar
     }()
     
-    lazy var scanQR: UIButton = {
+    lazy var scanQRButton: UIButton = {
         var config = UIButton.Configuration.filled()
-        config.baseForegroundColor = UIColor(hexString: "FF6E4E")
-        config.image = UIImage(named: "QR")
+        config.background.backgroundColor = UIColor(hexString: "FF6E4E")
+        config.cornerStyle = .capsule
         let button = UIButton(configuration: config)
         return button
+    }()
+    
+    lazy var qrImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "QR")
+        return imageView
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         addSubview(searchBar)
-        addSubview(scanQR)
+        addSubview(scanQRButton)
+        scanQRButton.addSubview(qrImageView)
         
         searchBar.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
+            make.leading.equalTo(32)
             make.centerY.equalToSuperview()
+            make.height.equalTo(34)
+            make.width.equalTo(300)
         }
         
-        scanQR.snp.makeConstraints { make in
+        scanQRButton.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalTo(searchBar.snp.trailing).inset(10)
+            make.leading.equalTo(searchBar.snp.trailing).inset(-5)
+            make.width.height.equalTo(34)
+        }
+        
+        qrImageView.snp.makeConstraints { make in
+            make.centerX.centerY.equalToSuperview()
+            make.width.height.equalTo(14.78)
         }
     }
     

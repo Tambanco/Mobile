@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     var presenter: MainPresenterProtocol!
     var categoriesView: CategoriesView!
     var categoriesCollectionView: UICollectionView!
+    var searchBarView: SearchBarView!
     var layout: UICollectionViewFlowLayout!
     var categories: [String] = ["Phones", "Computer", "Health", "Books", "Other"]
     
@@ -23,6 +24,20 @@ class MainViewController: UIViewController {
         setupMainView()
         setupCategoriesView()
         setupCollectionView()
+        setupSearchBarView()
+    }
+    
+    private func setupSearchBarView() {
+        searchBarView = SearchBarView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        searchBarView.backgroundColor = .systemRed
+        view.addSubview(searchBarView)
+        
+        searchBarView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.top.equalTo(categoriesView.snp.bottom)
+            make.trailing.equalToSuperview()
+            make.height.equalTo(60)
+        }
     }
     
     private func setupMainView() {
