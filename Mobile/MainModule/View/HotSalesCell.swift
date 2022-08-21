@@ -18,15 +18,12 @@ class HotSalesCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        //        hotSalesCardView.layer.cornerRadius = 30
-        
         addSubview(bgImageView)
         addSubview(newFlagView)
         newFlagView.addSubview(newLabel)
         addSubview(brandNameLabel)
         addSubview(brandDescription)
         addSubview(buyButton)
-        
         
         bgImageView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(10)

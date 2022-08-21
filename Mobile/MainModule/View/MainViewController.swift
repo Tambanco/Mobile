@@ -19,20 +19,20 @@ class MainViewController: UIViewController {
     private var hotSalesCollectionView: UICollectionView!
     private var categories: [String] = ["Phones", "Computer", "Health", "Books", "Other"]
     
-//    init(presenter: MainPresenterProtocol) {
-//        self.presenter = presenter
-//
-//        super.init(nibName: nil, bundle: nil)
-//    }
+    //    init(presenter: MainPresenterProtocol) {
+    //        self.presenter = presenter
+    //
+    //        super.init(nibName: nil, bundle: nil)
+    //    }
     
     private func createCollectionView() -> UICollectionView {
         fatalError()
     }
     
-//    @available(*, unavailable)
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    //    @available(*, unavailable)
+    //    required init?(coder: NSCoder) {
+    //        fatalError("init(coder:) has not been implemented")
+    //    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,7 +110,7 @@ class MainViewController: UIViewController {
         self.view.backgroundColor = UIColor(hexString: "#E5E5E5")
     }
     
-    private func  setupCategoriesView() {
+    private func setupCategoriesView() {
         categoriesView = CategoriesView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         view.addSubview(categoriesView)
         
@@ -122,7 +122,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    func setupCollectionView() {
+    private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         layout.itemSize = CGSize(width: 90, height: 90)
