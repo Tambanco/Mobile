@@ -8,60 +8,22 @@
 import UIKit
 
 class HotSalesCell: UICollectionViewCell {
-    lazy var bgImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.backgroundColor = UIColor(hexString: "FFFFFF")
-        return imageView
-    }()
-    
-    lazy var newFlagView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.backgroundColor = UIColor(hexString: "FF6E4E")
-        return imageView
-    }()
-    
-    lazy var newLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "SFPro Display", size: 10)
-        label.textColor = UIColor(hexString: "010035")
-        return label
-    }()
-    
-    lazy var brandName: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "SFPro Display", size: 10)
-        label.textColor = UIColor(hexString: "010035")
-        return label
-    }()
-    
-    lazy var brandDescription: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "SFPro Display", size: 10)
-        label.textColor = UIColor(hexString: "010035")
-        return label
-    }()
-    
-    lazy var buyButton: UIButton = {
-        var config = UIButton.Configuration.filled()
-        config.background.backgroundColor = UIColor(hexString: "FF6E4E")
-        config.cornerStyle = .capsule
-        config.title = "Buy now!"
-        config.attributedTitle?.font = UIFont(name: "SFPro Display", size: 11)
-        let button = UIButton(configuration: config)
-        return button
-    }()
-    
- 
+    private lazy var bgImageView: UIImageView = createbgImageView()
+    private lazy var newFlagView = createNewFlagView()
+    private lazy var newLabel = createNewLabel()
+    private lazy var brandNameLabel = createBrandNameLabel()
+    private lazy var brandDescription = createBrandDescriptionLabel()
+    private lazy var buyButton: UIButton = createBuyButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-//        hotSalesCardView.layer.cornerRadius = 30
+        //        hotSalesCardView.layer.cornerRadius = 30
         
         addSubview(bgImageView)
         addSubview(newFlagView)
         newFlagView.addSubview(newLabel)
-        addSubview(brandName)
+        addSubview(brandNameLabel)
         addSubview(brandDescription)
         addSubview(buyButton)
         
@@ -82,7 +44,7 @@ class HotSalesCell: UICollectionViewCell {
             make.centerY.equalToSuperview()
         }
         
-        brandName.snp.makeConstraints { make in
+        brandNameLabel.snp.makeConstraints { make in
             make.leading.equalTo(40)
             make.top.equalTo(68)
         }
@@ -100,5 +62,50 @@ class HotSalesCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+fileprivate extension HotSalesCell {
+    private func createbgImageView() -> UIImageView {
+        let imageView = UIImageView()
+        imageView.backgroundColor = UIColor(hexString: "FFFFFF")
+        return imageView
+    }
+    
+    private func createNewFlagView() -> UIImageView {
+        let imageView = UIImageView()
+        imageView.backgroundColor = UIColor(hexString: "FF6E4E")
+        return imageView
+    }
+    
+    private func createNewLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "SFPro Display", size: 10)
+        label.textColor = UIColor(hexString: "010035")
+        return label
+    }
+    
+    private func createBrandNameLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "SFPro Display", size: 10)
+        label.textColor = UIColor(hexString: "010035")
+        return label
+    }
+    
+    private func createBrandDescriptionLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "SFPro Display", size: 10)
+        label.textColor = UIColor(hexString: "010035")
+        return label
+    }
+    
+    private func createBuyButton() -> UIButton {
+        var config = UIButton.Configuration.filled()
+        config.background.backgroundColor = UIColor(hexString: "FF6E4E")
+        config.cornerStyle = .capsule
+        config.title = "Buy now!"
+        config.attributedTitle?.font = UIFont(name: "SFPro Display", size: 11)
+        let button = UIButton(configuration: config)
+        return button
     }
 }
