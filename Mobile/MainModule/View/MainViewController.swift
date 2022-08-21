@@ -11,14 +11,14 @@ import UIKit
 import SnapKit
 
 class MainViewController: UIViewController {
-
-	var presenter: MainPresenterProtocol!
+    
+    var presenter: MainPresenterProtocol!
     var categoriesView: CategoriesView!
     var categoriesCollectionView: UICollectionView!
     var layout: UICollectionViewFlowLayout!
     var categories: [String] = ["Phones", "Computer", "Health", "Books", "Other"]
-
-	override func viewDidLoad() {
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         setupMainView()
         setupCategoriesView()
@@ -32,8 +32,6 @@ class MainViewController: UIViewController {
     private func  setupCategoriesView() {
         categoriesView = CategoriesView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         view.addSubview(categoriesView)
-        
-//        categoriesView.backgroundColor = .systemOrange
         
         categoriesView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
@@ -49,6 +47,8 @@ class MainViewController: UIViewController {
         layout.itemSize = CGSize(width: 90, height: 90)
         layout.scrollDirection = .horizontal
         categoriesCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        categoriesCollectionView.allowsMultipleSelection = false
+        categoriesCollectionView.allowsSelection = true
         categoriesCollectionView.backgroundColor = .clear
         
         categoriesView.addSubview(categoriesCollectionView)
@@ -77,7 +77,24 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
         cell.categoryLabel.text = categories[indexPath.row]
         cell.categoryImageView.image = UIImage(named: "\(categories[indexPath.row])")
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell else {
+            return
+        }
+        cell.ellipseView.backgroundColor = UIColor(hexString: "FF6E4E")
+        cell.categoryLabel.textColor = UIColor(hexString: "FF6E4E")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell else {
+            return
+        }
+        cell.ellipseView.backgroundColor = UIColor(hexString: "FFFFFF")
+        cell.categoryLabel.textColor = UIColor(hexString: "010035")
     }
 }
 
