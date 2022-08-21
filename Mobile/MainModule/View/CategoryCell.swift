@@ -14,22 +14,9 @@ extension UICollectionViewCell {
 }
 
 class CategoryCell: UICollectionViewCell {
-//    static let reuseId = "CategoryCell"
-    
-    
-    private lazy var ellipseView = createEllipseView()
-    
-    lazy var categoryImageView: UIImageView = {
-        let imageView = UIImageView()
-        return imageView
-    }()
-    
-    lazy var categoryLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "MarkPro", size: 12)
-        label.textColor = UIColor(hexString: "010035")
-        return label
-    }()
+    lazy var ellipseView = createEllipseView()
+    lazy var categoryImageView = createCategoryImageView()
+    lazy var categoryLabel = createCategoryLabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -70,4 +57,17 @@ fileprivate extension CategoryCell {
         imageView.backgroundColor = UIColor(hexString: "FFFFFF")
         return imageView
     }
+    
+    private func createCategoryImageView() -> UIImageView {
+        let imageView = UIImageView()
+        return imageView
+    }
+    
+    private func createCategoryLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "MarkPro", size: 12)
+        label.textColor = UIColor(hexString: "010035")
+        return label
+    }
+    
 }

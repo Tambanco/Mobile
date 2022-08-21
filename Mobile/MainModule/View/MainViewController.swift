@@ -19,24 +19,20 @@ class MainViewController: UIViewController {
     private var hotSalesCollectionView: UICollectionView!
     private var categories: [String] = ["Phones", "Computer", "Health", "Books", "Other"]
     
-    init(presenter: MainPresenterProtocol) {
-        self.presenter = presenter
-        
-        super.init(nibName: nil, bundle: nil)
-    }
+//    init(presenter: MainPresenterProtocol) {
+//        self.presenter = presenter
+//
+//        super.init(nibName: nil, bundle: nil)
+//    }
     
     private func createCollectionView() -> UICollectionView {
         fatalError()
     }
-//    convenience init() {
-//        self.init(presenter: MainPresenter())
-//
-//    }
     
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    @available(*, unavailable)
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -170,15 +166,16 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell else {
             return
         }
-//        cell.ellipseView.backgroundColor = UIColor(hexString: "FF6E4E")
+        cell.ellipseView.backgroundColor = UIColor(hexString: "FF6E4E")
         cell.categoryLabel.textColor = UIColor(hexString: "FF6E4E")
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell else {
             return
         }
-//        cell.ellipseView.backgroundColor = UIColor(hexString: "FFFFFF")
+        cell.ellipseView.backgroundColor = UIColor(hexString: "FFFFFF")
         cell.categoryLabel.textColor = UIColor(hexString: "010035")
     }
 }
