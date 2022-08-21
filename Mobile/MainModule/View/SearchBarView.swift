@@ -10,6 +10,13 @@ import UIKit
 class SearchBarView: UIView {
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
+        searchBar.placeholder = "Search"
+        searchBar.searchTextField.font = UIFont(name: "MarkPro", size: 15)
+        searchBar.searchTextField.backgroundColor = .clear
+        let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
+        let imageV = textFieldInsideSearchBar?.leftView as! UIImageView
+        imageV.image = imageV.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+        imageV.tintColor = UIColor(hexString: "FF6E4E")
         return searchBar
     }()
     

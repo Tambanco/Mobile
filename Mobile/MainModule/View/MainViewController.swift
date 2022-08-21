@@ -29,7 +29,8 @@ class MainViewController: UIViewController {
     
     private func setupSearchBarView() {
         searchBarView = SearchBarView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        searchBarView.backgroundColor = .systemRed
+//        searchBarView.backgroundColor = .systemRed
+        searchBarView.searchBar.layer.cornerRadius = 2
         view.addSubview(searchBarView)
         
         searchBarView.snp.makeConstraints { make in
