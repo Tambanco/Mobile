@@ -1,14 +1,13 @@
 //
-//  CategoriesView.swift
+//  HotSalesView.swift
 //  Mobile
 //
-//  Created by tambanco 🥳 on 20.08.2022.
+//  Created by tambanco 🥳 on 21.08.2022.
 //
 
 import UIKit
-import SnapKit
 
-class CategoriesView: UIView {
+class HotSalesView: UIView {
     lazy var categoriesCardView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 15
@@ -19,13 +18,13 @@ class CategoriesView: UIView {
         let label = UILabel()
         label.font = UIFont(name: "MarkPro-Bold", size: 25)
         label.textColor = UIColor(hexString: "010035")
-        label.text = "Select Category"
+        label.text = "Hot sales"
         return label
     }()
     
     lazy var viewAllButton: UIButton = {
         var config = UIButton.Configuration.plain()
-        config.title = "view all"
+        config.title = "see more"
         config.attributedTitle?.font = UIFont(name: "MarkPro", size: 15)
         config.baseForegroundColor = UIColor(hexString: "FF6E4E")
         let button = UIButton(configuration: config)

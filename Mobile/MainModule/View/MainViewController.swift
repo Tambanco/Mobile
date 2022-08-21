@@ -15,8 +15,9 @@ class MainViewController: UIViewController {
     var presenter: MainPresenterProtocol!
     var categoriesView: CategoriesView!
     var categoriesCollectionView: UICollectionView!
-    var searchBarView: SearchBarView!
     var layout: UICollectionViewFlowLayout!
+    var searchBarView: SearchBarView!
+    var hotSalesView: HotSalesView!
     var categories: [String] = ["Phones", "Computer", "Health", "Books", "Other"]
     
     override func viewDidLoad() {
@@ -25,6 +26,20 @@ class MainViewController: UIViewController {
         setupCategoriesView()
         setupCollectionView()
         setupSearchBarView()
+        setupHotSalesView()
+    }
+    
+    private func setupHotSalesView() {
+        hotSalesView = HotSalesView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        view.addSubview(hotSalesView)
+        hotSalesView.backgroundColor = .systemOrange
+        
+        hotSalesView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.top.equalTo(searchBarView.snp.bottom)
+            make.trailing.equalToSuperview()
+            make.height.equalTo(200)
+        }
     }
     
     private func setupSearchBarView() {
