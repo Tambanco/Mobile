@@ -20,10 +20,10 @@ class SearchBarView: UIView {
         scanQRButton.addSubview(qrImageView)
         
         searchBar.snp.makeConstraints { make in
-            make.leading.equalTo(32)
+            make.leading.equalTo(10)
             make.centerY.equalToSuperview()
-            make.height.equalTo(34)
-            make.width.equalTo(300)
+            make.height.equalTo(36)
+            make.width.equalTo(320)
         }
         
         scanQRButton.snp.makeConstraints { make in
@@ -48,8 +48,10 @@ fileprivate extension SearchBarView {
     private func createSearchBar() -> UISearchBar {
         let searchBar = UISearchBar()
         searchBar.placeholder = "   Search"
+        searchBar.setPositionAdjustment(UIOffset(horizontal: 20, vertical: 0), for: .search)
         searchBar.searchTextField.font = UIFont(name: "MarkPro", size: 15)
-        searchBar.searchTextField.backgroundColor = .clear
+        searchBar.searchTextField.backgroundColor = UIColor(hexString: "FFFFFF")
+        searchBar.backgroundImage = UIImage()
         let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
         let imageV = textFieldInsideSearchBar?.leftView as! UIImageView
         imageV.image = imageV.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)

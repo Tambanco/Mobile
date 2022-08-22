@@ -85,19 +85,9 @@ class MainViewController: UIViewController {
     private func setupSearchBarView() {
         searchBarView = SearchBarView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         view.addSubview(searchBarView)
-        
-        searchBarView.searchBar.clipsToBounds = true
-        searchBarView.searchBar.layer.cornerRadius = 17
-        searchBarView.searchBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+
         searchBarView.searchBar.searchTextField.clipsToBounds = true
-        let directionalMargins = NSDirectionalEdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 0)
-        searchBarView.searchBar.directionalLayoutMargins = directionalMargins
-        
-//        searchBarView.searchBar.layer.borderWidth = 0
-//        searchBarView.searchBar.layer.borderColor = UIColor.clear.cgColor
-//
-//        searchBarView.searchBar.searchTextField.layer.borderWidth = 0
-//        searchBarView.searchBar.searchTextField.layer.borderColor = UIColor.clear.cgColor
+        searchBarView.searchBar.searchTextField.layer.cornerRadius = 17
         
         searchBarView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
@@ -185,5 +175,3 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
 extension MainViewController: MainViewProtocol {
     
 }
-
-
