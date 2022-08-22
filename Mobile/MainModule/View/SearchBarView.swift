@@ -38,6 +38,7 @@ class SearchBarView: UIView {
         }
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -48,8 +49,7 @@ fileprivate extension SearchBarView {
         let searchBar = UISearchBar()
         searchBar.placeholder = "   Search"
         searchBar.searchTextField.font = UIFont(name: "MarkPro", size: 15)
-//        searchBar.searchTextField.backgroundColor = .clear
-        searchBar.backgroundImage = UIImage()
+        searchBar.searchTextField.backgroundColor = .clear
         let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
         let imageV = textFieldInsideSearchBar?.leftView as! UIImageView
         imageV.image = imageV.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
