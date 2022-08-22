@@ -87,8 +87,14 @@ class MainViewController: UIViewController {
         view.addSubview(searchBarView)
         
         searchBarView.searchBar.clipsToBounds = true
-        searchBarView.searchBar.layer.cornerRadius = 17
-        searchBarView.searchBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+//        searchBarView.searchBar.layer.cornerRadius = 17
+//        searchBarView.searchBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        searchBarView.searchBar.searchTextField.clipsToBounds = true
+        searchBarView.searchBar.searchTextField.layer.cornerRadius = 10
+        searchBarView.searchBar.searchTextField.layer.maskedCorners = [ .layerMinXMinYCorner,
+                                                                        .layerMaxXMinYCorner,
+                                                                        .layerMinXMaxYCorner,
+                                                                        .layerMaxXMaxYCorner ]
         let directionalMargins = NSDirectionalEdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 0)
         searchBarView.searchBar.directionalLayoutMargins = directionalMargins
         
