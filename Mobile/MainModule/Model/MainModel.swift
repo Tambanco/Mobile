@@ -9,6 +9,11 @@
 
 import Foundation
 
+enum Section {
+    case hotSales
+    case bestSellers
+}
+
 struct MainModel {
 
 }
