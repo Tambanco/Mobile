@@ -19,9 +19,9 @@ class SectionHeader: UICollectionReusableView {
         label.backgroundColor = .blue
         
         label.translatesAutoresizingMaskIntoConstraints = false
-                 label.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-                 label.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
-                 label.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        label.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        label.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
+        label.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
     }
     
     @available(*, unavailable)
