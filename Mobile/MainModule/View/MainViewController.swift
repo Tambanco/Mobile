@@ -48,7 +48,7 @@ class MainViewController: UIViewController {
         
         mainCollectionReusableView.dataSource = self
         mainCollectionReusableView.delegate = self
-        
+        view.addSubview(<#T##view: UIView##UIView#>)
         view.addSubview(mainCollectionReusableView)
         
         mainCollectionReusableView.snp.makeConstraints { make in
