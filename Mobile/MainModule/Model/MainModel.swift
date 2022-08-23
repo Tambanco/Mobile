@@ -9,9 +9,10 @@
 
 import Foundation
 
-enum Section {
-    case hotSales
-    case bestSellers
+enum Section: String {
+    case selectCategory = "Select Category"
+    case hotSales =  "Hot sales"
+    case bestSellers = "Best Seller"
 }
 
 struct MainModel {

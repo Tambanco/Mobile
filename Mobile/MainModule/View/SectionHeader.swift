@@ -8,7 +8,6 @@
 import UIKit
 
 class SectionHeader: UICollectionReusableView {
-    
     lazy var label = createLabel()
     
     override init(frame: CGRect) {
@@ -16,7 +15,7 @@ class SectionHeader: UICollectionReusableView {
         
         addSubview(label)
         
-        label.backgroundColor = .blue
+        label.backgroundColor = .systemBlue
         
         label.translatesAutoresizingMaskIntoConstraints = false
         label.topAnchor.constraint(equalTo: self.topAnchor).isActive = true

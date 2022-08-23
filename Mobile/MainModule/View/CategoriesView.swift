@@ -10,15 +10,15 @@ import SnapKit
 
 class CategoriesView: UIView {
     private lazy var categoriesCardView = createCategoriesCardView()
-    private lazy var headerLabel = createHeaderLabel()
-    private lazy var viewAllButton = createViewAllButton()
+//    private lazy var headerLabel = createHeaderLabel()
+//    private lazy var viewAllButton = createViewAllButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         addSubview(categoriesCardView)
-        categoriesCardView.addSubview(headerLabel)
-        categoriesCardView.addSubview(viewAllButton)
+//        categoriesCardView.addSubview(headerLabel)
+//        categoriesCardView.addSubview(viewAllButton)
         
         categoriesCardView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
@@ -26,15 +26,15 @@ class CategoriesView: UIView {
             make.trailing.equalToSuperview()
         }
         
-        headerLabel.snp.makeConstraints { make in
-            make.leading.equalTo(17)
-            make.top.equalTo(17)
-        }
-        
-        viewAllButton.snp.makeConstraints { make in
-            make.trailing.equalTo(-33)
-            make.top.equalTo(17)
-        }
+//        headerLabel.snp.makeConstraints { make in
+//            make.leading.equalTo(17)
+//            make.top.equalTo(17)
+//        }
+//        
+//        viewAllButton.snp.makeConstraints { make in
+//            make.trailing.equalTo(-33)
+//            make.top.equalTo(17)
+//        }
     }
     
     @available(*, unavailable)
