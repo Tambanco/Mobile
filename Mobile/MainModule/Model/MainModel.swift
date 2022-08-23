@@ -15,6 +15,11 @@ enum Section: String {
     case bestSellers = "Best Seller"
 }
 
+enum ButtonHeader: String {
+    case viewAll = "view all"
+    case seeMore =  "see more"
+}
+
 struct MainModel {
 
 }

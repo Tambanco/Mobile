@@ -13,10 +13,8 @@ import SnapKit
 class MainViewController: UIViewController {
     private var presenter: MainPresenterProtocol!
     private var categoriesView: CategoriesView!
-    private lazy var categoriesCollectionView = createCollectionView()
+    private lazy var mainCollectionView = createCollectionView()
     private var searchBarView: SearchBarView!
-//    private var hotSalesView: HotSalesView!
-//    private var hotSalesCollectionView: UICollectionView!
     private var categories: [String] = ["Phones", "Computer", "Health", "Books", "Other"]
     
     private func createCollectionView() -> UICollectionView {
@@ -27,78 +25,9 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         setupMainView()
         setupCategoriesView()
-        setupCollectionView()
-//        setupMainCollectionView()
+        setupMainCollectionView()
 //        setupSearchBarView()
-//        setupHotSalesView()
-//        setupHotSalesCollectionView()
     }
-    
-//    private func setupMainCollectionView() {
-//        let layout = UICollectionViewFlowLayout()
-//        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-//        layout.itemSize = CGSize(width: 90, height: 90)
-//        layout.scrollDirection = .horizontal
-//        categoriesCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-//        sectionHeader = SectionHeader(frame: CGRect.zero)
-//
-//        categoriesCollectionView.backgroundColor = .green
-//
-//        categoriesCollectionView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.reuseId)
-//        categoriesCollectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
-//
-//        categoriesCollectionView.dataSource = self
-//        categoriesCollectionView.delegate = self
-//
-//        view.addSubview(sectionHeader)
-//        view.addSubview(categoriesCollectionView)
-//
-//        categoriesCollectionView.snp.makeConstraints { make in
-//            make.leading.equalToSuperview()
-//            make.top.equalTo(self.view.safeAreaLayoutGuide)
-//            make.trailing.equalToSuperview()
-//            make.bottom.equalTo(self.view.safeAreaLayoutGuide)
-//            make.height.equalTo(100)
-//        }
-//    }
-    
-//    private func setupHotSalesCollectionView() {
-//        let layout = UICollectionViewFlowLayout()
-//        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-//        layout.itemSize = CGSize(width: 90, height: 90)
-//        layout.scrollDirection = .horizontal
-//        hotSalesCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-//        hotSalesCollectionView.allowsMultipleSelection = false
-//        hotSalesCollectionView.allowsSelection = true
-//        hotSalesCollectionView.backgroundColor = .clear
-//
-//        hotSalesView.addSubview(hotSalesCollectionView)
-//
-//        hotSalesCollectionView.snp.makeConstraints { make in
-//            make.leading.equalToSuperview()
-//            make.top.equalTo(10)
-//            make.trailing.equalToSuperview()
-//            make.bottom.equalToSuperview()
-//        }
-//
-//        hotSalesCollectionView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.reuseId)
-//
-//        hotSalesCollectionView.dataSource = self
-//        hotSalesCollectionView.delegate = self
-//    }
-    
-//    private func setupHotSalesView() {
-//        hotSalesView = HotSalesView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-//        view.addSubview(hotSalesView)
-//        hotSalesView.backgroundColor = .systemOrange
-//
-//        hotSalesView.snp.makeConstraints { make in
-//            make.leading.equalToSuperview()
-//            make.top.equalTo(searchBarView.snp.bottom)
-//            make.trailing.equalToSuperview()
-//            make.height.equalTo(200)
-//        }
-//    }
     
     private func setupSearchBarView() {
         searchBarView = SearchBarView(frame: CGRect.zero)
@@ -132,33 +61,31 @@ class MainViewController: UIViewController {
         }
     }
     
-    private func setupCollectionView() {
+    private func setupMainCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.headerReferenceSize = CGSize(width: 50, height: 50)
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         layout.itemSize = CGSize(width: 90, height: 90)
         layout.scrollDirection = .vertical
-        categoriesCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        let sectionHeader = SectionHeader(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        categoriesCollectionView.allowsMultipleSelection = false
-        categoriesCollectionView.allowsSelection = true
-        categoriesCollectionView.backgroundColor = .green
+        mainCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        mainCollectionView.allowsMultipleSelection = false
+        mainCollectionView.allowsSelection = true
+        mainCollectionView.backgroundColor = .green
         
-        categoriesView.addSubview(categoriesCollectionView)
-        categoriesView.addSubview(sectionHeader)
+        categoriesView.addSubview(mainCollectionView)
         
-        categoriesCollectionView.snp.makeConstraints { make in
+        mainCollectionView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
-            make.top.equalTo(54)
+            make.top.equalTo(self.view.safeAreaLayoutGuide)
             make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
         
-        categoriesCollectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
-        categoriesCollectionView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.reuseId)
+        mainCollectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
+        mainCollectionView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.reuseId)
         
-        categoriesCollectionView.dataSource = self
-        categoriesCollectionView.delegate = self
+        mainCollectionView.dataSource = self
+        mainCollectionView.delegate = self
     }
 }
 
@@ -200,7 +127,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! SectionHeader
-            sectionHeader.label.text = Section.selectCategory.rawValue
+            sectionHeader.headerLabel.text = Section.selectCategory.rawValue
             sectionHeader.backgroundColor = .systemOrange
             return sectionHeader
         } else { //No footer in this case but can add option for that

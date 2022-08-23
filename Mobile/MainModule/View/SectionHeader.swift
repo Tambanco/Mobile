@@ -8,34 +8,47 @@
 import UIKit
 
 class SectionHeader: UICollectionReusableView {
-    lazy var label = createLabel()
+    lazy var headerLabel = createHeaderLabel()
+    private lazy var headerButton = createViewAllButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        addSubview(label)
+        addSubview(headerLabel)
+        addSubview(headerButton)
         
-        label.backgroundColor = .systemBlue
+        headerLabel.snp.makeConstraints { make in
+            make.leading.equalTo(17)
+            make.centerY.equalToSuperview()
+        }
         
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        label.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
-        label.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        headerButton.snp.makeConstraints { make in
+            make.trailing.equalTo(-33)
+            make.centerY.equalToSuperview()
+        }
     }
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 fileprivate extension SectionHeader {
-    private func createLabel() -> UILabel {
+    private func createHeaderLabel() -> UILabel {
         let label = UILabel()
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        label.sizeToFit()
+        label.font = UIFont(name: "MarkPro-Bold", size: 25)
+        label.textColor = UIColor(hexString: "010035")
+        label.text = "Select Category"
         return label
+    }
+    
+    private func createViewAllButton() -> UIButton {
+        var config = UIButton.Configuration.plain()
+        config.title = "view all"
+        config.attributedTitle?.font = UIFont(name: "MarkPro", size: 15)
+        config.baseForegroundColor = UIColor(hexString: "FF6E4E")
+        let button = UIButton(configuration: config)
+        return button
     }
 }
