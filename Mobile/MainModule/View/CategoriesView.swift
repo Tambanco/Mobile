@@ -61,7 +61,6 @@ fileprivate extension CategoriesView {
     }
     
     private func createCategoriesCollectionView() -> UICollectionView {
-        var categoriesCollectionView = UICollectionView()
         let layout = UICollectionViewFlowLayout()
         layout.headerReferenceSize = CGSize(width: 50, height: 50)
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)

@@ -129,8 +129,8 @@
 			children = (
 				4975D46228B12E4B000C80DC /* MainViewController.swift */,
 				4975D4C228B7C106000C80DC /* CategoriesView.swift */,
-				4975D4BE28B4E1F2000C80DC /* SectionHeaders.swift */,
 				4975D48C28B154E1000C80DC /* CategoryCell.swift */,
+				4975D4BE28B4E1F2000C80DC /* SectionHeaders.swift */,
 				4975D49028B2415F000C80DC /* SearchBarView.swift */,
 				4975D49228B269D6000C80DC /* HotSalesView.swift */,
 				4975D49428B273A6000C80DC /* HotSalesCell.swift */,
