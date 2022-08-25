@@ -14,8 +14,11 @@ class MainViewController: UIViewController {
     private var presenter: MainPresenterProtocol!
     private lazy var mainCollectionView = createMainCollectionView()
     private var categoriesView: CategoriesView!
+    private var hotSalesView: HotSalesView!
     private var sections = ["Hot sales", "Best Sellers"]
     private var buttonText = ["view all", "see more"]
+    
+    private var customCollectionView: [UIView] = []
     
     private func createMainCollectionView() -> UICollectionView {
         fatalError()
@@ -26,10 +29,17 @@ class MainViewController: UIViewController {
         setupMainView()
         setupCategoriesView()
         setupMainCollectionView()
+        setupHotSalesView()
     }
     
     private func setupMainView() {
         self.view.backgroundColor = UIColor(hexString: "#E5E5E5")
+    }
+    
+    private func setupHotSalesView() {
+        hotSalesView = HotSalesView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        hotSalesView.backgroundColor = .systemCyan
+        customCollectionView.append(hotSalesView)
     }
     
     private func setupCategoriesView() {
@@ -62,7 +72,8 @@ class MainViewController: UIViewController {
         }
         
         mainCollectionView.register(SectionHeaders.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
-        mainCollectionView.register(HotSalesCell.self, forCellWithReuseIdentifier: HotSalesCell.reuseId)
+//        mainCollectionView.register(HotSalesCell.self, forCellWithReuseIdentifier: HotSalesCell.reuseId)
+        mainCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         
         mainCollectionView.dataSource = self
         mainCollectionView.delegate = self
@@ -79,7 +90,9 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotSalesCell.reuseId, for: indexPath) as! HotSalesCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        print(indexPath.section)
+        cell.contentView.addSubview(customCollectionView[indexPath.section])
         cell.backgroundColor = .systemGreen
         return cell
     }

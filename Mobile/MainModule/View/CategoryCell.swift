@@ -70,5 +70,4 @@ fileprivate extension CategoryCell {
         label.textColor = UIColor(hexString: "010035")
         return label
     }
-    
 }
