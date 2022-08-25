@@ -69,7 +69,6 @@ fileprivate extension CategoriesView {
     
     private func createCategoriesCollectionView() -> UICollectionView {
         let layout = UICollectionViewFlowLayout()
-//        layout.itemSize = CGSize(width: 71, height: 100)
         layout.scrollDirection = .horizontal
         
         categoriesCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
