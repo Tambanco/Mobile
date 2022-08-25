@@ -18,7 +18,6 @@ class MainViewController: UIViewController {
     private var categoriesView: CategoriesView!
     private var sections = ["Hot sales", "Best Sellers"]
     private var buttonText = ["view all", "see more", "see more"]
-    private var categories = ["Phones", "Computer", "Health", "Books", "Other"]
     
     private func createCollectionView() -> UICollectionView {
         fatalError()
@@ -33,7 +32,6 @@ class MainViewController: UIViewController {
         setupMainView()
         setupCategoriesView()
         setupMainCollectionView()
-        setupCategoriesCollectionView()
     }
     
     private func setupMainView() {
@@ -44,7 +42,6 @@ class MainViewController: UIViewController {
         categoriesView = CategoriesView(frame: CGRect.zero)
         
         view.addSubview(categoriesView)
-        
         categoriesView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
             make.top.equalTo(self.view.safeAreaLayoutGuide)
@@ -55,8 +52,8 @@ class MainViewController: UIViewController {
     
     private func setupSearchBarView() {
         searchBarView = SearchBarView(frame: CGRect.zero)
-        view.addSubview(searchBarView)
         
+        view.addSubview(searchBarView)
         searchBarView.searchBar.searchTextField.clipsToBounds = true
         searchBarView.searchBar.searchTextField.layer.cornerRadius = 17
         
@@ -66,10 +63,6 @@ class MainViewController: UIViewController {
             make.trailing.equalToSuperview()
             make.height.equalTo(60)
         }
-    }
-    
-    private func setupCategoriesCollectionView() {
-        
     }
     
     private func setupMainCollectionView() {
@@ -102,41 +95,24 @@ class MainViewController: UIViewController {
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return sections.count
+        return 4
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseId, for: indexPath) as! CategoryCell
-        cell.categoryLabel.text = categories[indexPath.row]
-        cell.categoryImageView.image = UIImage(named: "\(categories[indexPath.row])")
+        cell.backgroundColor = .systemGreen
         
         return cell
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell else {
-//            return
-//        }
-//        cell.ellipseView.backgroundColor = UIColor(hexString: "FF6E4E")
-//        cell.categoryLabel.textColor = UIColor(hexString: "FF6E4E")
-//        
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-//        guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell else {
-//            return
-//        }
-//        cell.ellipseView.backgroundColor = UIColor(hexString: "FFFFFF")
-//        cell.categoryLabel.textColor = UIColor(hexString: "010035")
-//    }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! SectionHeaders
             sectionHeader.headerLabel.text = sections[indexPath.row]
+            print(indexPath)
             sectionHeader.backgroundColor = .systemOrange
             return sectionHeader
         } else {
@@ -147,7 +123,6 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 40)
     }
-    
 }
 
 // MARK: - Binding
