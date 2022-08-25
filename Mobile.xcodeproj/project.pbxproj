@@ -26,7 +26,7 @@
 		4975D49128B2415F000C80DC /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D49028B2415F000C80DC /* SearchBarView.swift */; };
 		4975D49328B269D6000C80DC /* HotSalesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D49228B269D6000C80DC /* HotSalesView.swift */; };
 		4975D49528B273A6000C80DC /* HotSalesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D49428B273A6000C80DC /* HotSalesCell.swift */; };
-		4975D4BF28B4E1F2000C80DC /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D4BE28B4E1F2000C80DC /* SectionHeader.swift */; };
+		4975D4BF28B4E1F2000C80DC /* SectionHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D4BE28B4E1F2000C80DC /* SectionHeaders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +50,7 @@
 		4975D49028B2415F000C80DC /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		4975D49228B269D6000C80DC /* HotSalesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSalesView.swift; sourceTree = "<group>"; };
 		4975D49428B273A6000C80DC /* HotSalesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSalesCell.swift; sourceTree = "<group>"; };
-		4975D4BE28B4E1F2000C80DC /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		4975D4BE28B4E1F2000C80DC /* SectionHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaders.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				4975D46228B12E4B000C80DC /* MainViewController.swift */,
-				4975D4BE28B4E1F2000C80DC /* SectionHeader.swift */,
+				4975D4BE28B4E1F2000C80DC /* SectionHeaders.swift */,
 				4975D48C28B154E1000C80DC /* CategoryCell.swift */,
 				4975D49028B2415F000C80DC /* SearchBarView.swift */,
 				4975D49228B269D6000C80DC /* HotSalesView.swift */,
@@ -282,7 +282,7 @@
 				4975D44A28B12C09000C80DC /* AppDelegate.swift in Sources */,
 				4975D46928B12E64000C80DC /* MainModel.swift in Sources */,
 				4975D44C28B12C09000C80DC /* SceneDelegate.swift in Sources */,
-				4975D4BF28B4E1F2000C80DC /* SectionHeader.swift in Sources */,
+				4975D4BF28B4E1F2000C80DC /* SectionHeaders.swift in Sources */,
 				4975D48928B15464000C80DC /* Categories.swift in Sources */,
 				4975D49128B2415F000C80DC /* SearchBarView.swift in Sources */,
 				4975D47928B1409D000C80DC /* HexColor.swift in Sources */,

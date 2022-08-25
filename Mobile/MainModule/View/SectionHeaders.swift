@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SectionHeader: UICollectionReusableView {
+class SectionHeaders: UICollectionReusableView {
     lazy var headerLabel = createHeaderLabel()
     private lazy var headerButton = createViewAllButton()
     
@@ -34,7 +34,7 @@ class SectionHeader: UICollectionReusableView {
     }
 }
 
-fileprivate extension SectionHeader {
+fileprivate extension SectionHeaders {
     private func createHeaderLabel() -> UILabel {
         let label = UILabel()
         label.font = UIFont(name: "MarkPro-Bold", size: 25)
