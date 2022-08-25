@@ -12,7 +12,7 @@ import SnapKit
 
 class MainViewController: UIViewController {
     private var presenter: MainPresenterProtocol!
-    private var categoriesView: CategoriesView!
+//    private var categoriesView: CategoriesView!
     private lazy var mainCollectionView = createCollectionView()
     private var searchBarView: SearchBarView!
     private var categories: [String] = ["Phones", "Computer", "Health", "Books", "Other"]
@@ -24,41 +24,27 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMainView()
-        setupCategoriesView()
         setupMainCollectionView()
 //        setupSearchBarView()
     }
     
-    private func setupSearchBarView() {
-        searchBarView = SearchBarView(frame: CGRect.zero)
-        view.addSubview(searchBarView)
-        
-        searchBarView.searchBar.searchTextField.clipsToBounds = true
-        searchBarView.searchBar.searchTextField.layer.cornerRadius = 17
-        
-        searchBarView.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.top.equalTo(categoriesView.snp.bottom)
-            make.trailing.equalToSuperview()
-            make.height.equalTo(60)
-        }
-    }
+//    private func setupSearchBarView() {
+//        searchBarView = SearchBarView(frame: CGRect.zero)
+//        view.addSubview(searchBarView)
+//
+//        searchBarView.searchBar.searchTextField.clipsToBounds = true
+//        searchBarView.searchBar.searchTextField.layer.cornerRadius = 17
+//
+//        searchBarView.snp.makeConstraints { make in
+//            make.leading.equalToSuperview()
+//            make.top.equalTo(categoriesView.snp.bottom)
+//            make.trailing.equalToSuperview()
+//            make.height.equalTo(60)
+//        }
+//    }
     
     private func setupMainView() {
         self.view.backgroundColor = UIColor(hexString: "#E5E5E5")
-    }
-    
-    private func setupCategoriesView() {
-        categoriesView = CategoriesView(frame: CGRect.zero)
-        categoriesView.backgroundColor = .cyan
-        view.addSubview(categoriesView)
-        
-        categoriesView.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.top.equalTo(self.view.safeAreaLayoutGuide)
-            make.trailing.equalToSuperview()
-            make.height.equalTo(200)
-        }
     }
     
     private func setupMainCollectionView() {
@@ -68,11 +54,9 @@ class MainViewController: UIViewController {
         layout.itemSize = CGSize(width: 90, height: 90)
         layout.scrollDirection = .vertical
         mainCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-//        mainCollectionView.allowsMultipleSelection = false
-        mainCollectionView.allowsSelection = true
         mainCollectionView.backgroundColor = .systemBlue
         
-        categoriesView.addSubview(mainCollectionView)
+        self.view.addSubview(mainCollectionView)
         
         mainCollectionView.snp.makeConstraints { make in
             make.leading.equalToSuperview()

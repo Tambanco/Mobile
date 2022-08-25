@@ -15,7 +15,6 @@
 		4975D46428B12E4B000C80DC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D46228B12E4B000C80DC /* MainViewController.swift */; };
 		4975D46728B12E58000C80DC /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D46628B12E58000C80DC /* MainPresenter.swift */; };
 		4975D46928B12E64000C80DC /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D46828B12E64000C80DC /* MainModel.swift */; };
-		4975D46C28B12F5A000C80DC /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D46B28B12F5A000C80DC /* CategoriesView.swift */; };
 		4975D47228B1301A000C80DC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4975D47128B1301A000C80DC /* SnapKit */; };
 		4975D47928B1409D000C80DC /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D47828B1409D000C80DC /* HexColor.swift */; };
 		4975D48128B1491A000C80DC /* Mark Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4975D48028B1491A000C80DC /* Mark Pro.ttf */; };
@@ -41,7 +40,6 @@
 		4975D46228B12E4B000C80DC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4975D46628B12E58000C80DC /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		4975D46828B12E64000C80DC /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
-		4975D46B28B12F5A000C80DC /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		4975D47828B1409D000C80DC /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 		4975D48028B1491A000C80DC /* Mark Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Pro.ttf"; path = "../../../../../Downloads/OnlineWebFonts_COM_d7cf085250facdfe6d5af1d96777f54e/Mark Pro/Mark Pro.ttf"; sourceTree = "<group>"; };
 		4975D48228B14932000C80DC /* Mark Pro Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Pro Bold.ttf"; path = "../../../../../Downloads/OnlineWebFonts_COM_d7cf085250facdfe6d5af1d96777f54e/Mark Pro Bold/Mark Pro Bold.ttf"; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 			children = (
 				4975D46228B12E4B000C80DC /* MainViewController.swift */,
 				4975D4BE28B4E1F2000C80DC /* SectionHeader.swift */,
-				4975D46B28B12F5A000C80DC /* CategoriesView.swift */,
 				4975D48C28B154E1000C80DC /* CategoryCell.swift */,
 				4975D49028B2415F000C80DC /* SearchBarView.swift */,
 				4975D49228B269D6000C80DC /* HotSalesView.swift */,
@@ -281,7 +278,6 @@
 			files = (
 				4975D48D28B154E1000C80DC /* CategoryCell.swift in Sources */,
 				4975D49528B273A6000C80DC /* HotSalesCell.swift in Sources */,
-				4975D46C28B12F5A000C80DC /* CategoriesView.swift in Sources */,
 				4975D46728B12E58000C80DC /* MainPresenter.swift in Sources */,
 				4975D44A28B12C09000C80DC /* AppDelegate.swift in Sources */,
 				4975D46928B12E64000C80DC /* MainModel.swift in Sources */,
