@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     private var presenter: MainPresenterProtocol!
 //    private var categoriesView: CategoriesView!
     private lazy var mainCollectionView = createCollectionView()
-    private var searchBarView: SearchBarView!
+//    private var searchBarView: SearchBarView!
     private var categories: [String] = ["Phones", "Computer", "Health", "Books", "Other"]
     
     private func createCollectionView() -> UICollectionView {
@@ -66,6 +66,7 @@ class MainViewController: UIViewController {
         }
         
         mainCollectionView.register(SectionHeaders.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
+        mainCollectionView.register(SectionFooters.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "footer")
         mainCollectionView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.reuseId)
         
         mainCollectionView.dataSource = self
@@ -114,8 +115,11 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             sectionHeader.headerLabel.text = Section.selectCategory.rawValue
             sectionHeader.backgroundColor = .systemOrange
             return sectionHeader
-        } else { //No footer in this case but can add option for that
-            return UICollectionReusableView()
+        } else {
+            let sectionFooter = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "footer", for: indexPath) as! SectionFooters
+            sectionFooter.backgroundColor = .systemCyan
+            return sectionFooter
+//            return UICollectionReusableView()
         }
     }
     

@@ -27,6 +27,7 @@
 		4975D49328B269D6000C80DC /* HotSalesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D49228B269D6000C80DC /* HotSalesView.swift */; };
 		4975D49528B273A6000C80DC /* HotSalesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D49428B273A6000C80DC /* HotSalesCell.swift */; };
 		4975D4BF28B4E1F2000C80DC /* SectionHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D4BE28B4E1F2000C80DC /* SectionHeaders.swift */; };
+		4975D4C128B77725000C80DC /* SectionFooters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D4C028B77725000C80DC /* SectionFooters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		4975D49228B269D6000C80DC /* HotSalesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSalesView.swift; sourceTree = "<group>"; };
 		4975D49428B273A6000C80DC /* HotSalesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSalesCell.swift; sourceTree = "<group>"; };
 		4975D4BE28B4E1F2000C80DC /* SectionHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaders.swift; sourceTree = "<group>"; };
+		4975D4C028B77725000C80DC /* SectionFooters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionFooters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			children = (
 				4975D46228B12E4B000C80DC /* MainViewController.swift */,
 				4975D4BE28B4E1F2000C80DC /* SectionHeaders.swift */,
+				4975D4C028B77725000C80DC /* SectionFooters.swift */,
 				4975D48C28B154E1000C80DC /* CategoryCell.swift */,
 				4975D49028B2415F000C80DC /* SearchBarView.swift */,
 				4975D49228B269D6000C80DC /* HotSalesView.swift */,
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4975D4C128B77725000C80DC /* SectionFooters.swift in Sources */,
 				4975D48D28B154E1000C80DC /* CategoryCell.swift in Sources */,
 				4975D49528B273A6000C80DC /* HotSalesCell.swift in Sources */,
 				4975D46728B12E58000C80DC /* MainPresenter.swift in Sources */,
