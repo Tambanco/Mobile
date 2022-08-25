@@ -8,11 +8,11 @@
 import UIKit
 
 class HotSalesCell: UICollectionViewCell {
-    private lazy var bgImageView: UIImageView = createbgImageView()
-    private lazy var newFlagView = createNewFlagView()
+    lazy var bgImageView: UIImageView = createbgImageView()
+    lazy var newFlagView = createNewFlagView()
     private lazy var newLabel = createNewLabel()
-    private lazy var brandNameLabel = createBrandNameLabel()
-    private lazy var brandDescription = createBrandDescriptionLabel()
+    lazy var brandNameLabel = createBrandNameLabel()
+    lazy var brandDescription = createBrandDescriptionLabel()
     private lazy var buyButton: UIButton = createBuyButton()
     
     override init(frame: CGRect) {
@@ -73,6 +73,7 @@ fileprivate extension HotSalesCell {
     private func createNewFlagView() -> UIImageView {
         let imageView = UIImageView()
         imageView.backgroundColor = UIColor(hexString: "FF6E4E")
+        imageView.layer.cornerRadius = 13.5
         return imageView
     }
     
@@ -99,10 +100,10 @@ fileprivate extension HotSalesCell {
     
     private func createBuyButton() -> UIButton {
         var config = UIButton.Configuration.filled()
-        config.background.backgroundColor = UIColor(hexString: "FF6E4E")
-        config.cornerStyle = .capsule
+        config.background.backgroundColor = UIColor(hexString: "FFFFFF")
         config.title = "Buy now!"
         config.attributedTitle?.font = UIFont(name: "SFPro Display", size: 11)
+        config.attributedTitle?.foregroundColor = UIColor(hexString: "#010035")
         let button = UIButton(configuration: config)
         return button
     }

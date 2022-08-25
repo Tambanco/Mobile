@@ -12,12 +12,12 @@ import SnapKit
 
 class MainViewController: UIViewController {
     private var presenter: MainPresenterProtocol!
-    private lazy var mainCollectionView = createCollectionView()
+    private lazy var mainCollectionView = createMainCollectionView()
     private var categoriesView: CategoriesView!
     private var sections = ["Hot sales", "Best Sellers"]
     private var buttonText = ["view all", "see more"]
     
-    private func createCollectionView() -> UICollectionView {
+    private func createMainCollectionView() -> UICollectionView {
         fatalError()
     }
 
@@ -89,7 +89,6 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! SectionHeaders
             sectionHeader.headerLabel.text = sections[indexPath.section]
             sectionHeader.headerButton.setTitle(buttonText[indexPath.section], for: .normal)
-            sectionHeader.backgroundColor = .systemOrange
             return sectionHeader
         } else {
             return UICollectionReusableView()

@@ -9,7 +9,7 @@ import SnapKit
 
 class CategoriesView: UIView {
     
-    let categories = Categories().categories
+    private let categories = Categories().categories
     
     private lazy var headerLabel = createHeaderLabel()
     private lazy var viewAllButton = createViewAllButton()
@@ -146,6 +146,14 @@ extension CategoriesView: UICollectionViewDelegate, UICollectionViewDataSource, 
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 79, height: 100)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 15, bottom: 5, right: 5)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell else {
             return
@@ -161,13 +169,5 @@ extension CategoriesView: UICollectionViewDelegate, UICollectionViewDataSource, 
         }
         cell.ellipseView.backgroundColor = UIColor(hexString: "FFFFFF")
         cell.categoryLabel.textColor = UIColor(hexString: "010035")
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 79, height: 100)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 15, bottom: 5, right: 5)
     }
 }

@@ -8,10 +8,15 @@
 import UIKit
 
 class HotSalesView: UIView {
+    private lazy var hotSalesItems: [HotSalesCell] = []
     private lazy var hotSalesCollectionView = createHotSalesCollectionView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        hotSalesCollectionView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.reuseId)
+        hotSalesCollectionView.delegate = self
+        hotSalesCollectionView.dataSource = self
         
         addSubview(hotSalesCollectionView)
         
@@ -37,5 +42,20 @@ fileprivate extension HotSalesView {
         hotSalesCollectionView.backgroundColor = .clear
         
         return hotSalesCollectionView
+    }
+}
+
+extension HotSalesView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return hotSalesItems.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotSalesCell.reuseId, for: indexPath) as! HotSalesCell
+        cell.bgImageView.image = UIImage(named: "testImage")
+        cell.newFlagView.backgroundColor = .systemGreen
+        cell.brandNameLabel.text = "Iphone 12"
+        cell.brandDescription.text = "Súper. Mega. Rápido."
+        return cell
     }
 }
