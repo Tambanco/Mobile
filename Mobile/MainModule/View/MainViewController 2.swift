@@ -49,24 +49,24 @@ class MainViewController: UIViewController {
             make.leading.equalToSuperview()
             make.top.equalTo(self.view.safeAreaLayoutGuide)
             make.trailing.equalToSuperview()
-            make.height.equalTo(230)
+            make.height.equalTo(200)
         }
     }
     
-    private func setupSearchBarView() {
-        searchBarView = SearchBarView(frame: CGRect.zero)
-        view.addSubview(searchBarView)
-        
-        searchBarView.searchBar.searchTextField.clipsToBounds = true
-        searchBarView.searchBar.searchTextField.layer.cornerRadius = 17
-        
-        searchBarView.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.top.equalTo(categoriesView.snp.bottom)
-            make.trailing.equalToSuperview()
-            make.height.equalTo(60)
-        }
-    }
+//    private func setupSearchBarView() {
+//        searchBarView = SearchBarView(frame: CGRect.zero)
+//        view.addSubview(searchBarView)
+//        
+//        searchBarView.searchBar.searchTextField.clipsToBounds = true
+//        searchBarView.searchBar.searchTextField.layer.cornerRadius = 17
+//        
+//        searchBarView.snp.makeConstraints { make in
+//            make.leading.equalToSuperview()
+//            make.top.equalTo(categoriesView.snp.bottom)
+//            make.trailing.equalToSuperview()
+//            make.height.equalTo(60)
+//        }
+//    }
     
     private func setupCategoriesCollectionView() {
         

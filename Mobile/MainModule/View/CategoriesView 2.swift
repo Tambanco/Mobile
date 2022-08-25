@@ -10,13 +10,10 @@ import SnapKit
 class CategoriesView: UIView {
     
     let categories = Categories().categories
-    
+    private lazy var searchBar = createSearchBar()
     private lazy var headerLabel = createHeaderLabel()
     private lazy var viewAllButton = createViewAllButton()
     private lazy var categoriesCollectionView = createCategoriesCollectionView()
-    private lazy var searchBar = createSearchBar()
-    private lazy var scanQRButton = createScanQRButton()
-    private lazy var qrImageView = createQRImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,15 +22,12 @@ class CategoriesView: UIView {
         categoriesCollectionView.delegate = self
         categoriesCollectionView.dataSource = self
         
-        searchBar.searchTextField.clipsToBounds = true
-        searchBar.searchTextField.layer.cornerRadius = 17
+        setupSearchBarView()
         
         addSubview(headerLabel)
         addSubview(viewAllButton)
         addSubview(categoriesCollectionView)
-        addSubview(searchBar)
-        addSubview(scanQRButton)
-        scanQRButton.addSubview(qrImageView)
+        addSubview(searchBarView)
         
         headerLabel.snp.makeConstraints { make in
             make.leading.equalTo(17)
@@ -41,32 +35,20 @@ class CategoriesView: UIView {
         }
 
         viewAllButton.snp.makeConstraints { make in
-            make.trailing.equalTo(-23)
+            make.trailing.equalTo(-33)
             make.top.equalTo(17)
         }
         
         categoriesCollectionView.snp.makeConstraints { make in
             make.top.equalTo(headerLabel.snp.bottom)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(130)
+            make.height.equalTo(170)
         }
         
-        searchBar.snp.makeConstraints { make in
-            make.leading.equalTo(10)
+        searchBarView.snp.makeConstraints { make in
             make.top.equalTo(categoriesCollectionView.snp.bottom)
-            make.height.equalTo(36)
-            make.width.equalTo(320)
-        }
-        
-        scanQRButton.snp.makeConstraints { make in
-            make.leading.equalTo(searchBar.snp.trailing).inset(-5)
-            make.centerY.equalTo(searchBar)
-            make.width.height.equalTo(34)
-        }
-        
-        qrImageView.snp.makeConstraints { make in
-            make.centerX.centerY.equalToSuperview()
-            make.width.height.equalTo(14.78)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(40)
         }
     }
     
@@ -103,35 +85,8 @@ fileprivate extension CategoriesView {
         
         return categoriesCollectionView
     }
-    
-    private func createSearchBar() -> UISearchBar {
-        let searchBar = UISearchBar()
-        searchBar.placeholder = "   Search"
-        searchBar.setPositionAdjustment(UIOffset(horizontal: 20, vertical: 0), for: .search)
-        searchBar.searchTextField.font = UIFont(name: "MarkPro", size: 15)
-        searchBar.searchTextField.backgroundColor = UIColor(hexString: "FFFFFF")
-        searchBar.backgroundImage = UIImage()
-        let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
-        let imageV = textFieldInsideSearchBar?.leftView as! UIImageView
-        imageV.image = imageV.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
-        imageV.tintColor = UIColor(hexString: "FF6E4E")
-        return searchBar
-    }
-    
-    private func createScanQRButton() -> UIButton {
-        var config = UIButton.Configuration.filled()
-        config.background.backgroundColor = UIColor(hexString: "FF6E4E")
-        config.cornerStyle = .capsule
-        let button = UIButton(configuration: config)
-        return button
-    }
-    
-    private func createQRImageView() -> UIImageView {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "QR")
-        return imageView
-    }
 }
+
 
 extension CategoriesView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -167,6 +122,19 @@ extension CategoriesView: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 27, bottom: 5, right: 5)
+        return UIEdgeInsets(top: 5, left: 27, bottom: 5, right: 5)
     }
 }
+
+
+extension CategoriesView: UISearchBarDelegate {
+    func createSearchBar() -> SearchBarView {
+        fatalError()
+    }
+    
+    func setupSearchBarView() {
+        searchBar = SearchBarView(frame: CGRect.zero)
+        
+    }
+}
+
