@@ -39,7 +39,7 @@ class CategoriesView: UIView {
         categoriesCollectionView.snp.makeConstraints { make in
             make.top.equalTo(headerLabel.snp.bottom)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(200)
+            make.height.equalTo(170)
         }
     }
     
@@ -69,23 +69,18 @@ fileprivate extension CategoriesView {
     
     private func createCategoriesCollectionView() -> UICollectionView {
         let layout = UICollectionViewFlowLayout()
-        layout.headerReferenceSize = CGSize(width: 50, height: 50)
-        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        layout.itemSize = CGSize(width: 90, height: 90)
+//        layout.itemSize = CGSize(width: 71, height: 100)
         layout.scrollDirection = .horizontal
         
         categoriesCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        categoriesCollectionView.backgroundColor = .systemGreen
+        categoriesCollectionView.backgroundColor = .clear
         
         return categoriesCollectionView
     }
 }
 
 
-extension CategoriesView: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    
-    
+extension CategoriesView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categories.count
     }
@@ -94,7 +89,31 @@ extension CategoriesView: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseId, for: indexPath) as! CategoryCell
         cell.categoryLabel.text = categories[indexPath.row]
         cell.categoryImageView.image = UIImage(named: "\(categories[indexPath.row])")
-        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell else {
+            return
+        }
+        cell.ellipseView.backgroundColor = UIColor(hexString: "FF6E4E")
+        cell.categoryLabel.textColor = UIColor(hexString: "FF6E4E")
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell else {
+            return
+        }
+        cell.ellipseView.backgroundColor = UIColor(hexString: "FFFFFF")
+        cell.categoryLabel.textColor = UIColor(hexString: "010035")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 77, height: 100)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 5, left: 27, bottom: 5, right: 5)
     }
 }

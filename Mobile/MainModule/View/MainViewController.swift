@@ -42,7 +42,6 @@ class MainViewController: UIViewController {
     
     private func setupCategoriesView() {
         categoriesView = CategoriesView(frame: CGRect.zero)
-        categoriesView.backgroundColor = .cyan
         
         view.addSubview(categoriesView)
         
@@ -117,22 +116,22 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell else {
-            return
-        }
-        cell.ellipseView.backgroundColor = UIColor(hexString: "FF6E4E")
-        cell.categoryLabel.textColor = UIColor(hexString: "FF6E4E")
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell else {
-            return
-        }
-        cell.ellipseView.backgroundColor = UIColor(hexString: "FFFFFF")
-        cell.categoryLabel.textColor = UIColor(hexString: "010035")
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell else {
+//            return
+//        }
+//        cell.ellipseView.backgroundColor = UIColor(hexString: "FF6E4E")
+//        cell.categoryLabel.textColor = UIColor(hexString: "FF6E4E")
+//        
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+//        guard let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell else {
+//            return
+//        }
+//        cell.ellipseView.backgroundColor = UIColor(hexString: "FFFFFF")
+//        cell.categoryLabel.textColor = UIColor(hexString: "010035")
+//    }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
