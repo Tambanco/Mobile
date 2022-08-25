@@ -86,15 +86,15 @@ fileprivate extension HotSalesCell {
     
     private func createBrandNameLabel() -> UILabel {
         let label = UILabel()
-        label.font = UIFont(name: "SFPro Display", size: 10)
-        label.textColor = UIColor(hexString: "010035")
+        label.font = UIFont(name: "SFPro-Display-Bold", size: 25)
+        label.textColor = UIColor(hexString: "FFFFFF")
         return label
     }
     
     private func createBrandDescriptionLabel() -> UILabel {
         let label = UILabel()
-        label.font = UIFont(name: "SFPro Display", size: 10)
-        label.textColor = UIColor(hexString: "010035")
+        label.font = UIFont(name: "SFPro Display", size: 11)
+        label.textColor = UIColor(hexString: "FFFFFF")
         return label
     }
     
