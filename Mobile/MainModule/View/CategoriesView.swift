@@ -42,7 +42,7 @@ class CategoriesView: UIView {
         }
 
         viewAllButton.snp.makeConstraints { make in
-            make.trailing.equalTo(-23)
+            make.trailing.equalTo(-15)
             make.top.equalTo(17)
         }
         
@@ -164,10 +164,10 @@ extension CategoriesView: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 77, height: 100)
+        return CGSize(width: 79, height: 100)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 27, bottom: 5, right: 5)
+        return UIEdgeInsets(top: 0, left: 15, bottom: 5, right: 5)
     }
 }

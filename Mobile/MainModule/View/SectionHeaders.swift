@@ -23,7 +23,7 @@ class SectionHeaders: UICollectionReusableView {
         }
         
         headerButton.snp.makeConstraints { make in
-            make.trailing.equalTo(-23)
+            make.trailing.equalTo(-15)
             make.centerY.equalToSuperview()
         }
     }

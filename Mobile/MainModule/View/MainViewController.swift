@@ -13,8 +13,6 @@ import SnapKit
 class MainViewController: UIViewController {
     private var presenter: MainPresenterProtocol!
     private lazy var mainCollectionView = createCollectionView()
-    private lazy var categoriesCollectionView = createCategoriesCollectionView()
-    private var searchBarView: SearchBarView!
     private var categoriesView: CategoriesView!
     private var sections = ["Hot sales", "Best Sellers"]
     private var buttonText = ["view all", "see more"]
@@ -41,7 +39,7 @@ class MainViewController: UIViewController {
     private func setupCategoriesView() {
         categoriesView = CategoriesView(frame: CGRect.zero)
         
-        view.addSubview(categoriesView)
+        self.view.addSubview(categoriesView)
         categoriesView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
             make.top.equalTo(self.view.safeAreaLayoutGuide)
@@ -50,32 +48,16 @@ class MainViewController: UIViewController {
         }
     }
     
-    private func setupSearchBarView() {
-        searchBarView = SearchBarView(frame: CGRect.zero)
-        
-        view.addSubview(searchBarView)
-        searchBarView.searchBar.searchTextField.clipsToBounds = true
-        searchBarView.searchBar.searchTextField.layer.cornerRadius = 17
-        
-        searchBarView.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.top.equalTo(categoriesView.snp.bottom)
-            make.trailing.equalToSuperview()
-            make.height.equalTo(60)
-        }
-    }
-    
     private func setupMainCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.headerReferenceSize = CGSize(width: 50, height: 50)
-        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        layout.itemSize = CGSize(width: 90, height: 90)
+//        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+//        layout.itemSize = CGSize(width: 90, height: 90)
         layout.scrollDirection = .vertical
         mainCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         mainCollectionView.backgroundColor = .systemBlue
         
         self.view.addSubview(mainCollectionView)
-        
         mainCollectionView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
             make.top.equalTo(categoriesView.snp.bottom)
@@ -84,7 +66,7 @@ class MainViewController: UIViewController {
         }
         
         mainCollectionView.register(SectionHeaders.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
-        mainCollectionView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.reuseId)
+        mainCollectionView.register(HotSalesCell.self, forCellWithReuseIdentifier: HotSalesCell.reuseId)
         
         mainCollectionView.dataSource = self
         mainCollectionView.delegate = self
@@ -93,7 +75,6 @@ class MainViewController: UIViewController {
 
 // MARK: - CollectionView methods
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sections.count
     }
@@ -102,7 +83,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseId, for: indexPath) as! CategoryCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotSalesCell.reuseId, for: indexPath) as! HotSalesCell
         cell.backgroundColor = .systemGreen
         return cell
     }
