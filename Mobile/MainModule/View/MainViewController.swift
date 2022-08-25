@@ -12,39 +12,65 @@ import SnapKit
 
 class MainViewController: UIViewController {
     private var presenter: MainPresenterProtocol!
-//    private var categoriesView: CategoriesView!
     private lazy var mainCollectionView = createCollectionView()
-//    private var searchBarView: SearchBarView!
-    private var categories: [String] = ["Phones", "Computer", "Health", "Books", "Other"]
+    private lazy var categoriesCollectionView = createCategoriesCollectionView()
+    private var searchBarView: SearchBarView!
+    private var categoriesView: CategoriesView!
+    private var sections = ["Hot sales", "Best Sellers"]
+    private var buttonText = ["view all", "see more", "see more"]
+    private var categories = ["Phones", "Computer", "Health", "Books", "Other"]
     
     private func createCollectionView() -> UICollectionView {
+        fatalError()
+    }
+    
+    private func createCategoriesCollectionView() -> UICollectionView {
         fatalError()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMainView()
+        setupCategoriesView()
         setupMainCollectionView()
-//        setupSearchBarView()
+        setupCategoriesCollectionView()
     }
-    
-//    private func setupSearchBarView() {
-//        searchBarView = SearchBarView(frame: CGRect.zero)
-//        view.addSubview(searchBarView)
-//
-//        searchBarView.searchBar.searchTextField.clipsToBounds = true
-//        searchBarView.searchBar.searchTextField.layer.cornerRadius = 17
-//
-//        searchBarView.snp.makeConstraints { make in
-//            make.leading.equalToSuperview()
-//            make.top.equalTo(categoriesView.snp.bottom)
-//            make.trailing.equalToSuperview()
-//            make.height.equalTo(60)
-//        }
-//    }
     
     private func setupMainView() {
         self.view.backgroundColor = UIColor(hexString: "#E5E5E5")
+    }
+    
+    private func setupCategoriesView() {
+        categoriesView = CategoriesView(frame: CGRect.zero)
+        categoriesView.backgroundColor = .cyan
+        
+        view.addSubview(categoriesView)
+        
+        categoriesView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.top.equalTo(self.view.safeAreaLayoutGuide)
+            make.trailing.equalToSuperview()
+            make.height.equalTo(200)
+        }
+    }
+    
+    private func setupSearchBarView() {
+        searchBarView = SearchBarView(frame: CGRect.zero)
+        view.addSubview(searchBarView)
+        
+        searchBarView.searchBar.searchTextField.clipsToBounds = true
+        searchBarView.searchBar.searchTextField.layer.cornerRadius = 17
+        
+        searchBarView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.top.equalTo(categoriesView.snp.bottom)
+            make.trailing.equalToSuperview()
+            make.height.equalTo(60)
+        }
+    }
+    
+    private func setupCategoriesCollectionView() {
+        
     }
     
     private func setupMainCollectionView() {
@@ -60,13 +86,12 @@ class MainViewController: UIViewController {
         
         mainCollectionView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
-            make.top.equalTo(self.view.safeAreaLayoutGuide)
+            make.top.equalTo(categoriesView.snp.bottom)
             make.trailing.equalToSuperview()
             make.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
         
         mainCollectionView.register(SectionHeaders.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
-        mainCollectionView.register(SectionFooters.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "footer")
         mainCollectionView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.reuseId)
         
         mainCollectionView.dataSource = self
@@ -78,7 +103,7 @@ class MainViewController: UIViewController {
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return Section.allCases.count
+        return sections.count
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categories.count
@@ -112,14 +137,11 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! SectionHeaders
-            sectionHeader.headerLabel.text = Section.selectCategory.rawValue
+            sectionHeader.headerLabel.text = sections[indexPath.row]
             sectionHeader.backgroundColor = .systemOrange
             return sectionHeader
         } else {
-            let sectionFooter = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "footer", for: indexPath) as! SectionFooters
-            sectionFooter.backgroundColor = .systemCyan
-            return sectionFooter
-//            return UICollectionReusableView()
+            return UICollectionReusableView()
         }
     }
     

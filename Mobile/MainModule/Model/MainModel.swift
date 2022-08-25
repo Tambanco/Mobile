@@ -9,17 +9,6 @@
 
 import Foundation
 
-enum Section: String, CaseIterable {
-    case selectCategory = "Select Category"
-    case hotSales =  "Hot sales"
-    case bestSellers = "Best Seller"
-}
-
-enum ButtonHeader: String {
-    case viewAll = "view all"
-    case seeMore =  "see more"
-}
-
 struct MainModel {
 
 }
