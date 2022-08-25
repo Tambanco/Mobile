@@ -9,7 +9,7 @@ import UIKit
 
 class SectionHeaders: UICollectionReusableView {
     lazy var headerLabel = createHeaderLabel()
-    private lazy var headerButton = createViewAllButton()
+    lazy var headerButton = createViewAllButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,7 +23,7 @@ class SectionHeaders: UICollectionReusableView {
         }
         
         headerButton.snp.makeConstraints { make in
-            make.trailing.equalTo(-33)
+            make.trailing.equalTo(-23)
             make.centerY.equalToSuperview()
         }
     }

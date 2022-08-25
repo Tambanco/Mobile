@@ -104,15 +104,14 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseId, for: indexPath) as! CategoryCell
         cell.backgroundColor = .systemGreen
-        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! SectionHeaders
-            sectionHeader.headerLabel.text = sections[indexPath.row]
-            print(indexPath)
+//            sectionHeader.headerLabel.text = sections[indexPath.row]
+//            sectionHeader.headerButton.setTitle(buttonText[indexPath.row], for: .normal)
             sectionHeader.backgroundColor = .systemOrange
             return sectionHeader
         } else {

@@ -24,6 +24,7 @@ class CategoriesView: UIView {
         categoriesCollectionView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.reuseId)
         categoriesCollectionView.delegate = self
         categoriesCollectionView.dataSource = self
+        categoriesCollectionView.showsHorizontalScrollIndicator = false
         
         searchBar.searchTextField.clipsToBounds = true
         searchBar.searchTextField.layer.cornerRadius = 17
