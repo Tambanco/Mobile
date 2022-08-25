@@ -68,9 +68,9 @@ class MainViewController: UIViewController {
         layout.itemSize = CGSize(width: 90, height: 90)
         layout.scrollDirection = .vertical
         mainCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        mainCollectionView.allowsMultipleSelection = false
+//        mainCollectionView.allowsMultipleSelection = false
         mainCollectionView.allowsSelection = true
-        mainCollectionView.backgroundColor = .green
+        mainCollectionView.backgroundColor = .systemBlue
         
         categoriesView.addSubview(mainCollectionView)
         
@@ -93,7 +93,7 @@ class MainViewController: UIViewController {
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return Section.allCases.count
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categories.count

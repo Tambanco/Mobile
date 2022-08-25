@@ -9,7 +9,7 @@
 
 import Foundation
 
-enum Section: String {
+enum Section: String, CaseIterable {
     case selectCategory = "Select Category"
     case hotSales =  "Hot sales"
     case bestSellers = "Best Seller"
