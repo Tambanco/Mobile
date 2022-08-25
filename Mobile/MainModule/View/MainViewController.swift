@@ -51,8 +51,8 @@ class MainViewController: UIViewController {
     private func setupMainCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.headerReferenceSize = CGSize(width: 50, height: 50)
-//        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-//        layout.itemSize = CGSize(width: 90, height: 90)
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        layout.itemSize = CGSize(width: 360, height: 200)
         layout.scrollDirection = .vertical
         mainCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         mainCollectionView.backgroundColor = .systemBlue
@@ -76,10 +76,10 @@ class MainViewController: UIViewController {
 // MARK: - CollectionView methods
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return sections.count
+        return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
