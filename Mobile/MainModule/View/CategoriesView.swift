@@ -8,12 +8,19 @@ import UIKit
 import SnapKit
 
 class CategoriesView: UIView {
+    
+    let categories = Categories().categories
+    
     private lazy var headerLabel = createHeaderLabel()
     private lazy var viewAllButton = createViewAllButton()
     private lazy var categoriesCollectionView = createCategoriesCollectionView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        categoriesCollectionView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.reuseId)
+        categoriesCollectionView.delegate = self
+        categoriesCollectionView.dataSource = self
         
         addSubview(headerLabel)
         addSubview(viewAllButton)
@@ -71,5 +78,23 @@ fileprivate extension CategoriesView {
         categoriesCollectionView.backgroundColor = .systemGreen
         
         return categoriesCollectionView
+    }
+}
+
+
+extension CategoriesView: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return categories.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.reuseId, for: indexPath) as! CategoryCell
+        cell.categoryLabel.text = categories[indexPath.row]
+        cell.categoryImageView.image = UIImage(named: "\(categories[indexPath.row])")
+        
+        return cell
     }
 }

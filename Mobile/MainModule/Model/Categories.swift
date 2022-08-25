@@ -8,9 +8,5 @@
 import Foundation
 
 struct Categories {
-    let phones: String
-    let computer: String
-    let health: String
-    let book: String
-    let other: String
+    var categories = ["Phones", "Computer", "Health", "Books", "Other"]
 }
