@@ -8,31 +8,17 @@
 import UIKit
 
 class HotSalesView: UIView {
-    private lazy var categoriesCardView = createCategoriesCardView()
-    private lazy var header: UILabel = createHeader()
-    private lazy var viewAllButton: UIButton = createViewAllButton()
+    private lazy var hotSalesCollectionView = createHotSalesCollectionView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        addSubview(categoriesCardView)
-        categoriesCardView.addSubview(header)
-        categoriesCardView.addSubview(viewAllButton)
+        addSubview(hotSalesCollectionView)
         
-        categoriesCardView.snp.makeConstraints { make in
+        hotSalesCollectionView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
             make.top.equalToSuperview()
             make.trailing.equalToSuperview()
-        }
-        
-        header.snp.makeConstraints { make in
-            make.leading.equalTo(17)
-            make.top.equalTo(17)
-        }
-        
-        viewAllButton.snp.makeConstraints { make in
-            make.trailing.equalTo(-33)
-            make.top.equalTo(17)
         }
     }
     
@@ -43,26 +29,13 @@ class HotSalesView: UIView {
 }
 
 fileprivate extension HotSalesView {
-    private func createCategoriesCardView() -> UIView {
-        let view = UIView()
-        view.layer.cornerRadius = 15
-        return view
-    }
-    
-    private func createHeader() -> UILabel {
-        let label = UILabel()
-        label.font = UIFont(name: "MarkPro-Bold", size: 25)
-        label.textColor = UIColor(hexString: "010035")
-        label.text = "Hot sales"
-        return label
-    }
-    
-    private func createViewAllButton() -> UIButton {
-        var config = UIButton.Configuration.plain()
-        config.title = "see more"
-        config.attributedTitle?.font = UIFont(name: "MarkPro", size: 15)
-        config.baseForegroundColor = UIColor(hexString: "FF6E4E")
-        let button = UIButton(configuration: config)
-        return button
+    private func createHotSalesCollectionView() -> UICollectionView {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        
+        hotSalesCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        hotSalesCollectionView.backgroundColor = .clear
+        
+        return hotSalesCollectionView
     }
 }

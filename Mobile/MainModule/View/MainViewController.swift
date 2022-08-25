@@ -20,11 +20,7 @@ class MainViewController: UIViewController {
     private func createCollectionView() -> UICollectionView {
         fatalError()
     }
-    
-    private func createCategoriesCollectionView() -> UICollectionView {
-        fatalError()
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMainView()
@@ -76,7 +72,7 @@ class MainViewController: UIViewController {
 // MARK: - CollectionView methods
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return sections.count
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
@@ -91,8 +87,8 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! SectionHeaders
-            sectionHeader.headerLabel.text = sections[indexPath.row]
-            sectionHeader.headerButton.setTitle(buttonText[indexPath.row], for: .normal)
+            sectionHeader.headerLabel.text = sections[indexPath.section]
+            sectionHeader.headerButton.setTitle(buttonText[indexPath.section], for: .normal)
             sectionHeader.backgroundColor = .systemOrange
             return sectionHeader
         } else {

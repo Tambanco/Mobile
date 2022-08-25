@@ -23,7 +23,6 @@
 		4975D48728B14953000C80DC /* Mark Pro Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4975D48628B14953000C80DC /* Mark Pro Medium.ttf */; };
 		4975D48928B15464000C80DC /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D48828B15464000C80DC /* Categories.swift */; };
 		4975D48D28B154E1000C80DC /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D48C28B154E1000C80DC /* CategoryCell.swift */; };
-		4975D49128B2415F000C80DC /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D49028B2415F000C80DC /* SearchBarView.swift */; };
 		4975D49328B269D6000C80DC /* HotSalesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D49228B269D6000C80DC /* HotSalesView.swift */; };
 		4975D49528B273A6000C80DC /* HotSalesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D49428B273A6000C80DC /* HotSalesCell.swift */; };
 		4975D4BF28B4E1F2000C80DC /* SectionHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D4BE28B4E1F2000C80DC /* SectionHeaders.swift */; };
@@ -48,7 +47,6 @@
 		4975D48628B14953000C80DC /* Mark Pro Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Pro Medium.ttf"; path = "../../../../../Downloads/OnlineWebFonts_COM_d7cf085250facdfe6d5af1d96777f54e/Mark Pro Medium/Mark Pro Medium.ttf"; sourceTree = "<group>"; };
 		4975D48828B15464000C80DC /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		4975D48C28B154E1000C80DC /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
-		4975D49028B2415F000C80DC /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		4975D49228B269D6000C80DC /* HotSalesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSalesView.swift; sourceTree = "<group>"; };
 		4975D49428B273A6000C80DC /* HotSalesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSalesCell.swift; sourceTree = "<group>"; };
 		4975D4BE28B4E1F2000C80DC /* SectionHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaders.swift; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 				4975D4C228B7C106000C80DC /* CategoriesView.swift */,
 				4975D48C28B154E1000C80DC /* CategoryCell.swift */,
 				4975D4BE28B4E1F2000C80DC /* SectionHeaders.swift */,
-				4975D49028B2415F000C80DC /* SearchBarView.swift */,
 				4975D49228B269D6000C80DC /* HotSalesView.swift */,
 				4975D49428B273A6000C80DC /* HotSalesCell.swift */,
 			);
@@ -288,7 +285,6 @@
 				4975D44C28B12C09000C80DC /* SceneDelegate.swift in Sources */,
 				4975D4BF28B4E1F2000C80DC /* SectionHeaders.swift in Sources */,
 				4975D48928B15464000C80DC /* Categories.swift in Sources */,
-				4975D49128B2415F000C80DC /* SearchBarView.swift in Sources */,
 				4975D47928B1409D000C80DC /* HexColor.swift in Sources */,
 				4975D45428B12C09000C80DC /* Mobile.xcdatamodeld in Sources */,
 				4975D46428B12E4B000C80DC /* MainViewController.swift in Sources */,
