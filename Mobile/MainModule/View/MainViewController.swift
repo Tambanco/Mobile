@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     private var searchBarView: SearchBarView!
     private var categoriesView: CategoriesView!
     private var sections = ["Hot sales", "Best Sellers"]
-    private var buttonText = ["view all", "see more", "see more"]
+    private var buttonText = ["view all", "see more"]
     
     private func createCollectionView() -> UICollectionView {
         fatalError()
@@ -95,7 +95,7 @@ class MainViewController: UIViewController {
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
+        return sections.count
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
@@ -110,8 +110,8 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! SectionHeaders
-//            sectionHeader.headerLabel.text = sections[indexPath.row]
-//            sectionHeader.headerButton.setTitle(buttonText[indexPath.row], for: .normal)
+            sectionHeader.headerLabel.text = sections[indexPath.row]
+            sectionHeader.headerButton.setTitle(buttonText[indexPath.row], for: .normal)
             sectionHeader.backgroundColor = .systemOrange
             return sectionHeader
         } else {
