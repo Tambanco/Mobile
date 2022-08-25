@@ -83,7 +83,7 @@ class MainViewController: UIViewController {
 // MARK: - CollectionView methods
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return sections.count
+        return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
