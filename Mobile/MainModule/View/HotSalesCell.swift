@@ -26,8 +26,8 @@ class HotSalesCell: UICollectionViewCell {
         addSubview(buyButton)
         
         bgImageView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(0)
-            make.top.bottom.equalToSuperview().inset(0)
+            make.leading.trailing.equalToSuperview()
+            make.top.bottom.equalToSuperview()
         }
         
         newFlagView.snp.makeConstraints { make in

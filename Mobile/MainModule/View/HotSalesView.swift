@@ -21,7 +21,8 @@ class HotSalesView: UIView {
         addSubview(hotSalesCollectionView)
         
         hotSalesCollectionView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
             make.top.equalToSuperview()
             make.bottom.equalToSuperview()
         }

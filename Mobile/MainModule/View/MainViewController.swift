@@ -37,7 +37,9 @@ class MainViewController: UIViewController {
     }
     
     private func setupHotSalesView() {
-        hotSalesView = HotSalesView(frame: CGRect(x: 0, y: 0, width: 350, height: 200))
+        hotSalesView = HotSalesView(frame: CGRect(x: 0, y: 0, width: 360, height: 200))
+        hotSalesView.layer.cornerRadius = 15
+        hotSalesView.layer.masksToBounds = true
         customCollectionView.append(hotSalesView)
     }
     
@@ -92,7 +94,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         print(indexPath.section)
         cell.contentView.addSubview(customCollectionView[indexPath.section])
-        cell.backgroundColor = .systemGreen
+        cell.backgroundColor = .clear
         return cell
     }
     
