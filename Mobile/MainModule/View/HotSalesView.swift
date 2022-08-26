@@ -23,7 +23,7 @@ class HotSalesView: UIView {
         hotSalesCollectionView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalToSuperview()
-            make.height.equalTo(200)
+            make.bottom.equalToSuperview()
         }
     }
     
@@ -37,7 +37,6 @@ fileprivate extension HotSalesView {
     private func createHotSalesCollectionView() -> UICollectionView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        
         hotSalesCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         
         return hotSalesCollectionView
