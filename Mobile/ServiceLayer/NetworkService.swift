@@ -12,11 +12,11 @@ enum HTTPMethod: String {
 }
 
 protocol NetworkServiceProtocol: Codable {
-    func getMainData(completion: @escaping (Result<[String]?, Error>) -> Void)
+    func getMainData(completion: @escaping (Result<[HomeStore]?, Error>) -> Void)
 }
 
 final class NewtworkService: NetworkServiceProtocol {
-    func getMainData(completion: @escaping (Result<[String]?, Error>) -> Void) {
+    func getMainData(completion: @escaping (Result<[HomeStore]?, Error>) -> Void) {
         let urlString = "https://run.mocky.io/v3/654bd15e-b121-49ba-a588-960956b15175"
         guard let url = URL(string: urlString) else { return }
         
@@ -28,11 +28,11 @@ final class NewtworkService: NetworkServiceProtocol {
                 completion(.failure(error!))
                 return
             }
+            
             let json = String(data: data, encoding: .utf8)!.data(using: .utf8)!
-            print(json)
-            var fiatList: [String] = []
-            fiatList = JSONParser.parseHomeStoreData(json: json)
-            completion(.success(fiatList))
+            var homeStoreData: [HomeStore] = []
+            homeStoreData = JSONParser.parseHomeStoreData(json: json)
+            completion(.success(homeStoreData))
         }
         task.resume()
     }

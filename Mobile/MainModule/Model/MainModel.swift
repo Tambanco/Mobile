@@ -20,6 +20,22 @@ struct MainModel: Codable {
     }
 }
 
+// MARK: - HomeStore
+struct HomeStore: Codable {
+    let id: Int?
+    let isNew: Bool?
+    let title, subtitle: String?
+    let picture: String?
+    let isBuy: Bool?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case isNew = "is_new"
+        case title, subtitle, picture
+        case isBuy = "is_buy"
+    }
+}
+
 // MARK: - BestSeller
 struct BestSeller: Codable {
     let id: Int?
@@ -37,20 +53,3 @@ struct BestSeller: Codable {
         case picture
     }
 }
-
-// MARK: - HomeStore
-struct HomeStore: Codable {
-    let id: Int?
-    let isNew: Bool?
-    let title, subtitle: String?
-    let picture: String?
-    let isBuy: Bool?
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case isNew = "is_new"
-        case title, subtitle, picture
-        case isBuy = "is_buy"
-    }
-}
-

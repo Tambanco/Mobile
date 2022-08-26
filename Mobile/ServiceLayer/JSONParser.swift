@@ -8,18 +8,20 @@
 import Foundation
 
 protocol Parcerable: AnyObject {
-    static func parseHomeStoreData(json: Data) -> [String]
+    static func parseHomeStoreData(json: Data) -> [HomeStore]
 }
 
 class JSONParser: Parcerable {
-    static func parseHomeStoreData(json: Data) -> [String] {
+    static func parseHomeStoreData(json: Data) -> [HomeStore] {
         let decoder = JSONDecoder()
-        var homeStoreData: [String] = []
+        var homeStoreData: [HomeStore] = []
         
         do {
             let data = try decoder.decode(HomeStore.self, from: json)
+            homeStoreData = [data]
+            
         } catch {
-            print("parsing symbols failure")
+            print("parsing data failure")
         }
         
         return homeStoreData

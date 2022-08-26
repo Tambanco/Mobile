@@ -31,7 +31,6 @@ class MainPresenter: MainPresenterProtocol {
     func getHomeStoreData() {
         networkService?.getMainData(completion: { [weak self] result in
             guard let self = self else { return }
-            DispatchQueue.main.async {
                 switch result {
                 case .success(let symbols):
                     print(symbols)
@@ -39,7 +38,6 @@ class MainPresenter: MainPresenterProtocol {
                 case .failure(let error):
                     self.view?.failure(error: error)
                 }
-            }
         })
     }
     
