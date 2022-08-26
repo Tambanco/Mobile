@@ -45,12 +45,11 @@ fileprivate extension HotSalesView {
 
 extension HotSalesView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotSalesCell.reuseId, for: indexPath) as! HotSalesCell
-        cell.backgroundColor = .systemRed
         cell.bgImageView.image = UIImage(named: "testImage")
         cell.brandNameLabel.text = "Iphone 12"
         cell.brandDescription.text = "Súper. Mega. Rápido."

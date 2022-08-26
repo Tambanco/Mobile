@@ -26,8 +26,8 @@ class HotSalesCell: UICollectionViewCell {
         addSubview(buyButton)
         
         bgImageView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(10)
-            make.top.bottom.equalToSuperview().inset(10)
+            make.leading.trailing.equalToSuperview().inset(0)
+            make.top.bottom.equalToSuperview().inset(0)
         }
         
         newFlagView.snp.makeConstraints { make in
@@ -66,6 +66,7 @@ class HotSalesCell: UICollectionViewCell {
 fileprivate extension HotSalesCell {
     private func createbgImageView() -> UIImageView {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = UIColor(hexString: "FFFFFF")
         return imageView
     }

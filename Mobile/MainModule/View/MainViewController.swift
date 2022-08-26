@@ -38,7 +38,6 @@ class MainViewController: UIViewController {
     
     private func setupHotSalesView() {
         hotSalesView = HotSalesView(frame: CGRect(x: 0, y: 0, width: 350, height: 200))
-        hotSalesView.backgroundColor = .systemCyan
         customCollectionView.append(hotSalesView)
     }
     
