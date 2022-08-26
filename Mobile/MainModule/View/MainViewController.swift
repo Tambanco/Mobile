@@ -31,10 +31,6 @@ class MainViewController: UIViewController {
         setupMainCollectionView()
         setupHotSalesView()
         
-        UIFont.familyNames.forEach({ familyName in
-            let fontNames = UIFont.fontNames(forFamilyName: familyName)
-            print(familyName, fontNames)
-        })
     }
     
     private func setupMainView() {
@@ -67,7 +63,7 @@ class MainViewController: UIViewController {
         layout.itemSize = CGSize(width: 360, height: 200)
         layout.scrollDirection = .vertical
         mainCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        mainCollectionView.backgroundColor = .systemBlue
+        mainCollectionView.backgroundColor = .clear
         
         self.view.addSubview(mainCollectionView)
         mainCollectionView.snp.makeConstraints { make in
@@ -78,7 +74,6 @@ class MainViewController: UIViewController {
         }
         
         mainCollectionView.register(SectionHeaders.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
-//        mainCollectionView.register(HotSalesCell.self, forCellWithReuseIdentifier: HotSalesCell.reuseId)
         mainCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         
         mainCollectionView.dataSource = self
@@ -97,7 +92,6 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        print(indexPath.section)
         cell.contentView.addSubview(customCollectionView[indexPath.section])
         cell.backgroundColor = .clear
         return cell
