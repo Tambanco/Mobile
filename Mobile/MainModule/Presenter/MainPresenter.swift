@@ -11,21 +11,36 @@ import Foundation
 
 // MARK: Output protocol
 protocol MainViewProtocol: AnyObject {
-
+    func success()
+    func failure(error: Error)
 }
 
 // MARK: Input protocol
 protocol MainPresenterProtocol: AnyObject {
     init(view: MainViewProtocol, model:  MainModel)
-
+    func getHomeStoreData()
 }
 
 class MainPresenter: MainPresenterProtocol {
-
+    
+    var networkService: NetworkServiceProtocol!
     weak var view: MainViewProtocol?
     var model: MainModel
     
-    // Enter buisness logic here
+    func getHomeStoreData() {
+        networkService?.getMainData(completion: { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let symbols):
+                    print(symbols)
+                    self.view?.success()
+                case .failure(let error):
+                    self.view?.failure(error: error)
+                }
+            }
+        })
+    }
     
     required init(view: MainViewProtocol, model: MainModel) {
         self.view = view

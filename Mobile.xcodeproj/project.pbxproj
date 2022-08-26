@@ -30,6 +30,7 @@
 		4975D4E328B95D1D000C80DC /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4975D4D128B95D1C000C80DC /* SF-Pro-Display-Regular.otf */; };
 		4975D4E828B95D1D000C80DC /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4975D4D628B95D1C000C80DC /* SF-Pro-Display-Bold.otf */; };
 		4975D4EB28B96882000C80DC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D4EA28B96882000C80DC /* NetworkService.swift */; };
+		4975D4ED28B96AA0000C80DC /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D4EC28B96AA0000C80DC /* JSONParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		4975D4D128B95D1C000C80DC /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		4975D4D628B95D1C000C80DC /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		4975D4EA28B96882000C80DC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		4975D4EC28B96AA0000C80DC /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				4975D4EA28B96882000C80DC /* NetworkService.swift */,
+				4975D4EC28B96AA0000C80DC /* JSONParser.swift */,
 				4975D47528B13A40000C80DC /* CoreDataStack */,
 			);
 			path = ServiceLayer;
@@ -298,6 +301,7 @@
 				4975D4BF28B4E1F2000C80DC /* SectionHeaders.swift in Sources */,
 				4975D48928B15464000C80DC /* Categories.swift in Sources */,
 				4975D47928B1409D000C80DC /* HexColor.swift in Sources */,
+				4975D4ED28B96AA0000C80DC /* JSONParser.swift in Sources */,
 				4975D45428B12C09000C80DC /* Mobile.xcdatamodeld in Sources */,
 				4975D46428B12E4B000C80DC /* MainViewController.swift in Sources */,
 				4975D49328B269D6000C80DC /* HotSalesView.swift in Sources */,

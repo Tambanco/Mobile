@@ -29,6 +29,7 @@ class MainViewController: UIViewController {
         setupCategoriesView()
         setupMainCollectionView()
         setupHotSalesView()
+//        presenter.getHomeStoreData()
     }
     
     private func setupMainView() {
@@ -113,5 +114,11 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
 
 // MARK: - Binding
 extension MainViewController: MainViewProtocol {
+    func success() {
+        print("success")
+    }
     
+    func failure(error: Error) {
+        print(error.localizedDescription)
+    }
 }
