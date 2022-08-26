@@ -15,7 +15,6 @@ protocol RouterMain {
 
 protocol RouterProtocol: RouterMain {
     func initialViewController()
-    func showCurrencyView()
     func popToRoot()
 }
 
@@ -32,13 +31,6 @@ class Router: RouterProtocol {
         if let navigationController = navigationController {
             guard let fiatViewController = assemblyBuilder?.createFiatModule(router: self) else { return }
             navigationController.pushViewController(fiatViewController, animated: true)
-        }
-    }
-    
-    func showCurrencyView() {
-        if let navigationController = navigationController {
-            guard let currencyViewController = assemblyBuilder?.createCurrencyModule(router: self) else { return }
-            navigationController.pushViewController(currencyViewController, animated: true)
         }
     }
     

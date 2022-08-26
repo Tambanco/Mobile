@@ -11,7 +11,7 @@ import UIKit
 import SnapKit
 
 class MainViewController: UIViewController {
-    private var presenter: MainPresenterProtocol!
+    var presenter: MainPresenterProtocol!
     private lazy var mainCollectionView = createMainCollectionView()
     private var categoriesView: CategoriesView!
     private var hotSalesView: HotSalesView!

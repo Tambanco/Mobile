@@ -17,15 +17,16 @@ protocol MainViewProtocol: AnyObject {
 
 // MARK: Input protocol
 protocol MainPresenterProtocol: AnyObject {
-    init(view: MainViewProtocol, model:  MainModel)
+    init(router: RouterProtocol, view: MainViewProtocol, networkService: NetworkServiceProtocol)
     func getHomeStoreData()
 }
 
 class MainPresenter: MainPresenterProtocol {
     
-    var networkService: NetworkServiceProtocol!
+    
+    var networkService: NetworkServiceProtocol?
     weak var view: MainViewProtocol?
-    var model: MainModel
+    var router: RouterProtocol?
     
     func getHomeStoreData() {
         networkService?.getMainData(completion: { [weak self] result in
@@ -42,8 +43,9 @@ class MainPresenter: MainPresenterProtocol {
         })
     }
     
-    required init(view: MainViewProtocol, model: MainModel) {
+    required init(router: RouterProtocol, view: MainViewProtocol, networkService: NetworkServiceProtocol) {
+        self.router = router
         self.view = view
-        self.model = model
+        self.networkService = networkService
     }
 }
