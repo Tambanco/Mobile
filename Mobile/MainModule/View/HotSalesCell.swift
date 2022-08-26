@@ -31,29 +31,29 @@ class HotSalesCell: UICollectionViewCell {
         }
         
         newFlagView.snp.makeConstraints { make in
-            make.leading.equalTo(40)
-            make.top.equalTo(23)
+            make.leading.equalTo(26)
+            make.top.equalTo(20)
             make.width.height.equalTo(27)
         }
         
         newLabel.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.centerY.equalToSuperview()
+            make.centerX.centerY.equalToSuperview()
         }
         
         brandNameLabel.snp.makeConstraints { make in
-            make.leading.equalTo(40)
+            make.leading.equalTo(26)
             make.top.equalTo(68)
         }
         
         brandDescription.snp.makeConstraints { make in
-            make.leading.equalTo(40)
+            make.leading.equalTo(26)
             make.top.equalTo(103)
         }
         
         buyButton.snp.makeConstraints { make in
-            make.leading.equalTo(40)
+            make.leading.equalTo(26)
             make.top.equalTo(142)
+            make.width.equalTo(98)
         }
     }
     
@@ -80,14 +80,16 @@ fileprivate extension HotSalesCell {
     
     private func createNewLabel() -> UILabel {
         let label = UILabel()
-        label.font = UIFont(name: "SFPro Display", size: 10)
-        label.textColor = UIColor(hexString: "010035")
+        label.font = UIFont(name: "SF-Pro-Display-Bold", size: 20)
+//        label.font = UIFont(name:"HelveticaNeue-Bold", size: 10)
+        label.text = "New"
+        label.textColor = UIColor(hexString: "FFFFFF")
         return label
     }
     
     private func createBrandNameLabel() -> UILabel {
         let label = UILabel()
-        label.font = UIFont(name: "SFPro-Display-Bold", size: 25)
+        label.font = UIFont(name: "SFPro Display Bold", size: 25)
         label.textColor = UIColor(hexString: "FFFFFF")
         return label
     }
