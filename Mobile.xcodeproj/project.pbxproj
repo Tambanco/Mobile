@@ -29,6 +29,7 @@
 		4975D4C328B7C106000C80DC /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D4C228B7C106000C80DC /* CategoriesView.swift */; };
 		4975D4E328B95D1D000C80DC /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4975D4D128B95D1C000C80DC /* SF-Pro-Display-Regular.otf */; };
 		4975D4E828B95D1D000C80DC /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4975D4D628B95D1C000C80DC /* SF-Pro-Display-Bold.otf */; };
+		4975D4EB28B96882000C80DC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D4EA28B96882000C80DC /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		4975D4C228B7C106000C80DC /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		4975D4D128B95D1C000C80DC /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		4975D4D628B95D1C000C80DC /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
+		4975D4EA28B96882000C80DC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 		4975D47728B13A8E000C80DC /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				4975D4EA28B96882000C80DC /* NetworkService.swift */,
 				4975D47528B13A40000C80DC /* CoreDataStack */,
 			);
 			path = ServiceLayer;
@@ -290,6 +293,7 @@
 				4975D46728B12E58000C80DC /* MainPresenter.swift in Sources */,
 				4975D44A28B12C09000C80DC /* AppDelegate.swift in Sources */,
 				4975D46928B12E64000C80DC /* MainModel.swift in Sources */,
+				4975D4EB28B96882000C80DC /* NetworkService.swift in Sources */,
 				4975D44C28B12C09000C80DC /* SceneDelegate.swift in Sources */,
 				4975D4BF28B4E1F2000C80DC /* SectionHeaders.swift in Sources */,
 				4975D48928B15464000C80DC /* Categories.swift in Sources */,
