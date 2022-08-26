@@ -31,6 +31,7 @@
 		4975D4E828B95D1D000C80DC /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4975D4D628B95D1C000C80DC /* SF-Pro-Display-Bold.otf */; };
 		4975D4EB28B96882000C80DC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D4EA28B96882000C80DC /* NetworkService.swift */; };
 		4975D4ED28B96AA0000C80DC /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D4EC28B96AA0000C80DC /* JSONParser.swift */; };
+		4988D2C228B972510075ADCC /* AssemblyModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4988D2C128B972510075ADCC /* AssemblyModuleBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		4975D4D628B95D1C000C80DC /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		4975D4EA28B96882000C80DC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		4975D4EC28B96AA0000C80DC /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		4988D2C128B972510075ADCC /* AssemblyModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyModuleBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 		4975D47728B13A8E000C80DC /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				4988D2C128B972510075ADCC /* AssemblyModuleBuilder.swift */,
 				4975D4EA28B96882000C80DC /* NetworkService.swift */,
 				4975D4EC28B96AA0000C80DC /* JSONParser.swift */,
 				4975D47528B13A40000C80DC /* CoreDataStack */,
@@ -293,6 +296,7 @@
 				4975D48D28B154E1000C80DC /* CategoryCell.swift in Sources */,
 				4975D4C328B7C106000C80DC /* CategoriesView.swift in Sources */,
 				4975D49528B273A6000C80DC /* HotSalesCell.swift in Sources */,
+				4988D2C228B972510075ADCC /* AssemblyModuleBuilder.swift in Sources */,
 				4975D46728B12E58000C80DC /* MainPresenter.swift in Sources */,
 				4975D44A28B12C09000C80DC /* AppDelegate.swift in Sources */,
 				4975D46928B12E64000C80DC /* MainModel.swift in Sources */,
