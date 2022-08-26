@@ -80,8 +80,7 @@ fileprivate extension HotSalesCell {
     
     private func createNewLabel() -> UILabel {
         let label = UILabel()
-        label.font = UIFont(name: "SF-Pro-Display-Bold", size: 20)
-//        label.font = UIFont(name:"HelveticaNeue-Bold", size: 10)
+        label.font = UIFont(name: "SF Pro Display Regular", size: 10)
         label.text = "New"
         label.textColor = UIColor(hexString: "FFFFFF")
         return label
@@ -89,7 +88,7 @@ fileprivate extension HotSalesCell {
     
     private func createBrandNameLabel() -> UILabel {
         let label = UILabel()
-        label.font = UIFont(name: "SFPro Display Bold", size: 25)
+        label.font = UIFont(name: "SF Pro Display Bold", size: 25)
         label.textColor = UIColor(hexString: "FFFFFF")
         return label
     }
@@ -105,7 +104,7 @@ fileprivate extension HotSalesCell {
         var config = UIButton.Configuration.filled()
         config.background.backgroundColor = UIColor(hexString: "FFFFFF")
         config.title = "Buy now!"
-        config.attributedTitle?.font = UIFont(name: "SFPro Display", size: 11)
+        config.attributedTitle?.font = UIFont(name: "SF Pro Display Bold", size: 11)
         config.attributedTitle?.foregroundColor = UIColor(hexString: "#010035")
         let button = UIButton(configuration: config)
         return button

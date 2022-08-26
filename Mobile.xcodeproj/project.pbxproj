@@ -27,6 +27,8 @@
 		4975D49528B273A6000C80DC /* HotSalesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D49428B273A6000C80DC /* HotSalesCell.swift */; };
 		4975D4BF28B4E1F2000C80DC /* SectionHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D4BE28B4E1F2000C80DC /* SectionHeaders.swift */; };
 		4975D4C328B7C106000C80DC /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D4C228B7C106000C80DC /* CategoriesView.swift */; };
+		4975D4E328B95D1D000C80DC /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4975D4D128B95D1C000C80DC /* SF-Pro-Display-Regular.otf */; };
+		4975D4E828B95D1D000C80DC /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4975D4D628B95D1C000C80DC /* SF-Pro-Display-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		4975D49428B273A6000C80DC /* HotSalesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSalesCell.swift; sourceTree = "<group>"; };
 		4975D4BE28B4E1F2000C80DC /* SectionHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaders.swift; sourceTree = "<group>"; };
 		4975D4C228B7C106000C80DC /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		4975D4D128B95D1C000C80DC /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		4975D4D628B95D1C000C80DC /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,8 @@
 		4975D47E28B146C1000C80DC /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				4975D4D628B95D1C000C80DC /* SF-Pro-Display-Bold.otf */,
+				4975D4D128B95D1C000C80DC /* SF-Pro-Display-Regular.otf */,
 				4975D48628B14953000C80DC /* Mark Pro Medium.ttf */,
 				4975D48428B14946000C80DC /* Mark Pro Heavy.ttf */,
 				4975D48228B14932000C80DC /* Mark Pro Bold.ttf */,
@@ -263,9 +269,11 @@
 				4975D48128B1491A000C80DC /* Mark Pro.ttf in Resources */,
 				4975D48528B14946000C80DC /* Mark Pro Heavy.ttf in Resources */,
 				4975D45928B12C0A000C80DC /* LaunchScreen.storyboard in Resources */,
+				4975D4E828B95D1D000C80DC /* SF-Pro-Display-Bold.otf in Resources */,
 				4975D48328B14932000C80DC /* Mark Pro Bold.ttf in Resources */,
 				4975D48728B14953000C80DC /* Mark Pro Medium.ttf in Resources */,
 				4975D45628B12C0A000C80DC /* Assets.xcassets in Resources */,
+				4975D4E328B95D1D000C80DC /* SF-Pro-Display-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
