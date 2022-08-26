@@ -17,7 +17,6 @@ class MainViewController: UIViewController {
     private var hotSalesView: HotSalesView!
     private var sections = ["Hot sales", "Best Sellers"]
     private var buttonText = ["view all", "see more"]
-    
     private var customCollectionView: [UIView] = []
     
     private func createMainCollectionView() -> UICollectionView {
@@ -30,7 +29,6 @@ class MainViewController: UIViewController {
         setupCategoriesView()
         setupMainCollectionView()
         setupHotSalesView()
-        
     }
     
     private func setupMainView() {
