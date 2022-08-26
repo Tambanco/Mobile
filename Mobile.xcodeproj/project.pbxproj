@@ -32,6 +32,7 @@
 		4975D4EB28B96882000C80DC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D4EA28B96882000C80DC /* NetworkService.swift */; };
 		4975D4ED28B96AA0000C80DC /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975D4EC28B96AA0000C80DC /* JSONParser.swift */; };
 		4988D2C228B972510075ADCC /* AssemblyModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4988D2C128B972510075ADCC /* AssemblyModuleBuilder.swift */; };
+		4988D2C428B9727E0075ADCC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4988D2C328B9727E0075ADCC /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		4975D4EA28B96882000C80DC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		4975D4EC28B96AA0000C80DC /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		4988D2C128B972510075ADCC /* AssemblyModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyModuleBuilder.swift; sourceTree = "<group>"; };
+		4988D2C328B9727E0075ADCC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				4988D2C128B972510075ADCC /* AssemblyModuleBuilder.swift */,
 				4975D4EA28B96882000C80DC /* NetworkService.swift */,
 				4975D4EC28B96AA0000C80DC /* JSONParser.swift */,
+				4988D2C328B9727E0075ADCC /* Router.swift */,
 				4975D47528B13A40000C80DC /* CoreDataStack */,
 			);
 			path = ServiceLayer;
@@ -303,6 +306,7 @@
 				4975D4EB28B96882000C80DC /* NetworkService.swift in Sources */,
 				4975D44C28B12C09000C80DC /* SceneDelegate.swift in Sources */,
 				4975D4BF28B4E1F2000C80DC /* SectionHeaders.swift in Sources */,
+				4988D2C428B9727E0075ADCC /* Router.swift in Sources */,
 				4975D48928B15464000C80DC /* Categories.swift in Sources */,
 				4975D47928B1409D000C80DC /* HexColor.swift in Sources */,
 				4975D4ED28B96AA0000C80DC /* JSONParser.swift in Sources */,
