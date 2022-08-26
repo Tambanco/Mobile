@@ -28,10 +28,10 @@ final class NewtworkService: NetworkServiceProtocol {
                 completion(.failure(error!))
                 return
             }
-            print(data)
             let json = String(data: data, encoding: .utf8)!.data(using: .utf8)!
+            print(json)
             var fiatList: [String] = []
-            fiatList = JSONParser.parseCurrencyList(json: json)
+            fiatList = JSONParser.parseHomeStoreData(json: json)
             completion(.success(fiatList))
         }
         task.resume()

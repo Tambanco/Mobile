@@ -29,7 +29,7 @@ class MainViewController: UIViewController {
         setupCategoriesView()
         setupMainCollectionView()
         setupHotSalesView()
-//        presenter.getHomeStoreData()
+        presenter.getHomeStoreData()
     }
     
     private func setupMainView() {

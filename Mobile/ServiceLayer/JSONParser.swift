@@ -8,11 +8,11 @@
 import Foundation
 
 protocol Parcerable: AnyObject {
-    static func parseCurrencyList(json: Data) -> [String]
+    static func parseHomeStoreData(json: Data) -> [String]
 }
 
 class JSONParser: Parcerable {
-    static func parseCurrencyList(json: Data) -> [String] {
+    static func parseHomeStoreData(json: Data) -> [String] {
         let decoder = JSONDecoder()
         var homeStoreData: [String] = []
         
