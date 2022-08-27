@@ -25,11 +25,11 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.fetchMainData()
         setupMainView()
         setupCategoriesView()
         setupMainCollectionView()
         setupHotSalesView()
-        presenter.getHomeStoreData()
     }
     
     private func setupMainView() {
@@ -38,6 +38,7 @@ class MainViewController: UIViewController {
     
     private func setupHotSalesView() {
         hotSalesView = HotSalesView(frame: CGRect(x: 0, y: 0, width: 360, height: 200))
+        hotSalesView.hotSalesItems = presenter.homeStore
         hotSalesView.layer.cornerRadius = 15
         hotSalesView.layer.masksToBounds = true
         customCollectionView.append(hotSalesView)

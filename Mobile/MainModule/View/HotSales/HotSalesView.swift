@@ -8,8 +8,13 @@
 import UIKit
 
 class HotSalesView: UIView {
-//    private lazy var hotSalesItems: [HotSalesCell] = []
+    var presenter: MainPresenterProtocol!
     private lazy var hotSalesCollectionView = createHotSalesCollectionView()
+    var hotSalesItems: [HomeStore]? = [] {
+        didSet {
+            print("didSet")
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,8 +57,9 @@ extension HotSalesView: UICollectionViewDelegate, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotSalesCell.reuseId, for: indexPath) as! HotSalesCell
         cell.bgImageView.image = UIImage(named: "testImage")
-        cell.brandNameLabel.text = "Iphone 12"
-        cell.brandDescription.text = "Súper. Mega. Rápido."
+//        cell.brandNameLabel.text = presenter.homeStore.title[indexPath.row]
+//        cell.brandNameLabel.text = hotSalesItems?[indexPath.row].title ?? ""
+//        cell.brandDescription.text = presenter.homeStore.subtitle[indexPath.row]
         return cell
     }
     

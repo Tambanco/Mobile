@@ -17,23 +17,26 @@ protocol MainViewProtocol: AnyObject {
 
 // MARK: Input protocol
 protocol MainPresenterProtocol: AnyObject {
+    var homeStore: [HomeStore]? { get set }
+    
+    func fetchMainData()
     init(router: RouterProtocol, view: MainViewProtocol, networkService: NetworkServiceProtocol)
-    func getHomeStoreData()
 }
 
 class MainPresenter: MainPresenterProtocol {
-    
+    var homeStore: [HomeStore]? = []
     
     var networkService: NetworkServiceProtocol?
     weak var view: MainViewProtocol?
     var router: RouterProtocol?
     
-    func getHomeStoreData() {
+    func fetchMainData() {
         networkService?.fetchMainData(completion: { [weak self] result in
             guard let self = self else { return }
                 switch result {
-                case .success(let symbols):
-                    print(symbols)
+                case .success(let mainData):
+                    self.homeStore = mainData?.homeStore
+                    print(self.homeStore?.first?.title)
                     self.view?.success()
                 case .failure(let error):
                     self.view?.failure(error: error)

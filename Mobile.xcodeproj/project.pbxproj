@@ -77,6 +77,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49365A8028BA376D00236E43 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4975D4C228B7C106000C80DC /* CategoriesView.swift */,
+				4975D48C28B154E1000C80DC /* CategoryCell.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		49365A8128BA377800236E43 /* HotSales */ = {
+			isa = PBXGroup;
+			children = (
+				4975D49228B269D6000C80DC /* HotSalesView.swift */,
+				4975D49428B273A6000C80DC /* HotSalesCell.swift */,
+			);
+			path = HotSales;
+			sourceTree = "<group>";
+		};
 		4975D43D28B12C09000C80DC = {
 			isa = PBXGroup;
 			children = (
@@ -138,11 +156,9 @@
 			isa = PBXGroup;
 			children = (
 				4975D46228B12E4B000C80DC /* MainViewController.swift */,
-				4975D4C228B7C106000C80DC /* CategoriesView.swift */,
-				4975D48C28B154E1000C80DC /* CategoryCell.swift */,
+				49365A8028BA376D00236E43 /* Categories */,
 				4975D4BE28B4E1F2000C80DC /* SectionHeaders.swift */,
-				4975D49228B269D6000C80DC /* HotSalesView.swift */,
-				4975D49428B273A6000C80DC /* HotSalesCell.swift */,
+				49365A8128BA377800236E43 /* HotSales */,
 			);
 			path = View;
 			sourceTree = "<group>";

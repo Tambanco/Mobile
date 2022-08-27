@@ -29,8 +29,8 @@ final class NewtworkService: NetworkServiceProtocol {
                 return
             }
             let jsonData = String(data: data, encoding: .utf8)!.data(using: .utf8)!
-            let homeStoreData = JSONParser.parseHomeStoreData(data: jsonData)
-            completion(.success(homeStoreData))
+            let mainData = JSONParser.parseHomeStoreData(data: jsonData)
+            completion(.success(mainData))
         }
         task.resume()
     }
