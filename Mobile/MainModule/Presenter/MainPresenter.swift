@@ -29,7 +29,7 @@ class MainPresenter: MainPresenterProtocol {
     var router: RouterProtocol?
     
     func getHomeStoreData() {
-        networkService?.getMainData(completion: { [weak self] result in
+        networkService?.fetchMainData(completion: { [weak self] result in
             guard let self = self else { return }
                 switch result {
                 case .success(let symbols):

@@ -8,22 +8,22 @@
 import Foundation
 
 protocol Parcerable: AnyObject {
-    static func parseHomeStoreData(json: Data) -> [HomeStore]
+    static func parseHomeStoreData(data: Data) -> MainModel
 }
 
 class JSONParser: Parcerable {
-    static func parseHomeStoreData(json: Data) -> [HomeStore] {
+    static func parseHomeStoreData(data: Data) -> MainModel {
         let decoder = JSONDecoder()
         var homeStoreData: [HomeStore] = []
+        var bestSeller: [BestSeller] = []
+        var mainData: MainModel = MainModel(homeStore: homeStoreData, bestSeller: bestSeller)
         
         do {
-            let data = try decoder.decode(HomeStore.self, from: json)
-            homeStoreData = [data]
-            
+            let data = try decoder.decode(MainModel.self, from: data)
         } catch {
             print("parsing data failure")
         }
         
-        return homeStoreData
+        return mainData
     }
 }
