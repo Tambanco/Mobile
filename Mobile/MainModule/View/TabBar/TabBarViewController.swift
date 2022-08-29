@@ -9,32 +9,32 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
     
-    private lazy var VCs: [UIViewController] = []
-    private lazy var firstVC = createFirstVC()
-    
-    private func createFirstVC() -> UIViewController {
-        fatalError()
-    }
+    let button = UIButton.init(type: .custom)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UITabBar.appearance().barTintColor = .systemBackground
+        UITabBar.appearance().barTintColor = .systemRed
         tabBar.tintColor = .label
         
         setupVCs()
     }
     
     func setupVCs() {
-        //        viewControllers = [
-        //            createNavController(for: MainViewController(), title: NSLocalizedString("", comment: ""), image: UIImage(named: "explorerImage") ?? UIImage()),
-        //            createNavController(for: MainViewController(),
-        //                                title: NSLocalizedString("", comment: ""),
-        //                                image: UIImage(named: "bagImage") ?? UIImage()),
-        //            createNavController(for: MainViewController(), title: NSLocalizedString("", comment: ""), image: UIImage(named: "heartImage") ?? UIImage()),
-        //            createNavController(for: MainViewController(), title: NSLocalizedString("", comment: ""), image: UIImage(named: "profileImage") ?? UIImage())
-        //        ]
-        viewControllers = VCs
+        viewControllers = [
+            createNavController(for: MainViewController(),
+                                title: NSLocalizedString("● Explore", comment: ""),
+                                image: UIImage()),
+            createNavController(for: MainViewController(),
+                                title: NSLocalizedString("", comment: ""),
+                                image: UIImage(named: "bagImage")?.resized(to: CGSize(width: 18, height: 18)) ?? UIImage()),
+            createNavController(for: MainViewController(),
+                                title: NSLocalizedString("", comment: ""),
+                                image: UIImage(named: "heartImage")?.resized(to: CGSize(width: 20, height: 18)) ?? UIImage()),
+            createNavController(for: MainViewController(),
+                                title: NSLocalizedString("", comment: ""),
+                                image: UIImage(named: "profileImage")?.resized(to: CGSize(width: 17, height: 18)) ?? UIImage())
+        ]
     }
     
     fileprivate func createNavController(for rootViewController: UIViewController,
@@ -47,9 +47,4 @@ class TabBarViewController: UITabBarController {
         rootViewController.navigationItem.title = title
         return navController
     }
-}
-
-extension TabBarViewController {
-    
-    
 }
