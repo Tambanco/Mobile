@@ -33,7 +33,6 @@ class MainViewController: UIViewController {
         setupHotSalesView()
         setupBestSellerView()
         
-//        print(customCollectionView)
     }
     
     private func setupMainView() {
@@ -41,7 +40,7 @@ class MainViewController: UIViewController {
     }
     
     private func setupBestSellerView() {
-        bestSellerView = BestSellerView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width * 0.92, height: 400))
+        bestSellerView = BestSellerView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width * 0.92, height: 600))
         customCollectionView.append(bestSellerView)
         
     }
@@ -67,9 +66,6 @@ class MainViewController: UIViewController {
     
     private func setupMainCollectionView() {
         let layout = UICollectionViewFlowLayout()
-        layout.headerReferenceSize = CGSize(width: 50, height: 50)
-        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        layout.itemSize = CGSize(width: 360, height: 200)
         layout.scrollDirection = .vertical
         mainCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         
@@ -92,7 +88,7 @@ class MainViewController: UIViewController {
 }
 
 // MARK: - CollectionView methods
-extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return customCollectionView.count
     }
@@ -120,6 +116,25 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 40)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 5, left: 0, bottom: 10, right: 5)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat
+        let height: CGFloat
+        
+        if indexPath.section == 0 {
+            width = 360
+            height = 200
+        } else {
+            width = 360
+            height = 500
+        }
+        
+        return CGSize(width: width, height: height)
     }
 }
 
