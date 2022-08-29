@@ -8,7 +8,7 @@
 import UIKit
 
 class HotSalesCell: UICollectionViewCell {
-    lazy var bgImageView: UIImageView = createbgImageView()
+    lazy var hotSalesImageView: UIImageView = createbgImageView()
     lazy var newFlagView = createNewFlagView()
     private lazy var newLabel = createNewLabel()
     lazy var brandNameLabel = createBrandNameLabel()
@@ -18,14 +18,14 @@ class HotSalesCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        addSubview(bgImageView)
+        addSubview(hotSalesImageView)
         addSubview(newFlagView)
         newFlagView.addSubview(newLabel)
         addSubview(brandNameLabel)
         addSubview(brandDescription)
         addSubview(buyButton)
         
-        bgImageView.snp.makeConstraints { make in
+        hotSalesImageView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.bottom.equalToSuperview()
         }
