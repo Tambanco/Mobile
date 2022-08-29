@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     private lazy var mainCollectionView = createMainCollectionView()
     private var categoriesView: CategoriesView!
     private var hotSalesView: HotSalesView!
+    private var bestSellerView: BestSellerView!
     private var sections = ["Hot sales", "Best Sellers"]
     private var buttonText = ["view all", "see more"]
     private var customCollectionView: [UIView] = []
@@ -22,7 +23,7 @@ class MainViewController: UIViewController {
     private func createMainCollectionView() -> UICollectionView {
         fatalError()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.fetchMainData()
@@ -30,10 +31,19 @@ class MainViewController: UIViewController {
         setupCategoriesView()
         setupMainCollectionView()
         setupHotSalesView()
+        setupBestSellerView()
+        
+        print(customCollectionView)
     }
     
     private func setupMainView() {
         self.view.backgroundColor = UIColor(hexString: "#E5E5E5")
+    }
+    
+    private func setupBestSellerView() {
+        bestSellerView = BestSellerView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 400))
+        customCollectionView.append(bestSellerView)
+        
     }
     
     private func setupHotSalesView() {
@@ -62,7 +72,7 @@ class MainViewController: UIViewController {
         layout.itemSize = CGSize(width: 360, height: 200)
         layout.scrollDirection = .vertical
         mainCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        mainCollectionView.backgroundColor = .clear
+        mainCollectionView.backgroundColor = .systemRed
         
         self.view.addSubview(mainCollectionView)
         mainCollectionView.snp.makeConstraints { make in
@@ -83,7 +93,7 @@ class MainViewController: UIViewController {
 // MARK: - CollectionView methods
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return customCollectionView.count
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1

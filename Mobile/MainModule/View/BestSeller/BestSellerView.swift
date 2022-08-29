@@ -17,6 +17,7 @@ class BestSellerView: UIView {
         bestSellerCollectionView.register(BestSellerCell.self, forCellWithReuseIdentifier: BestSellerCell.reuseId)
         bestSellerCollectionView.delegate = self
         bestSellerCollectionView.dataSource = self
+        bestSellerCollectionView.backgroundColor = .systemGreen
         
         addSubview(bestSellerCollectionView)
         
@@ -37,7 +38,7 @@ class BestSellerView: UIView {
 fileprivate extension BestSellerView {
     private func createBestSellerCollectionView() -> UICollectionView {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
+        layout.scrollDirection = .vertical
         bestSellerCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         
         return bestSellerCollectionView
@@ -55,11 +56,14 @@ extension BestSellerView: UICollectionViewDelegate, UICollectionViewDataSource, 
         cell.currentPrice.text = "$1500"
         cell.oldPrice.text = "$1047"
         cell.brandNameLabel.text = "Samsung Galaxy s20 Ultra"
+        cell.backgroundColor = .systemBlue
+        cell.contentView.layer.cornerRadius = 10
+        cell.contentView.layer.masksToBounds = true
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 180, height: 230)
+        return CGSize(width: 190, height: 230)
     }
 }

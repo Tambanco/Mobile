@@ -26,28 +26,29 @@ class BestSellerCell: UICollectionViewCell {
         
         bestSellerImageView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.top.bottom.equalToSuperview()
+            make.top.equalToSuperview()
+            make.height.equalTo(168)
         }
         
         likeButton.snp.makeConstraints { make in
-            make.trailing.equalTo(12)
+            make.trailing.equalTo(-20)
             make.top.equalTo(12)
             make.width.height.equalTo(25)
         }
     
         currentPrice.snp.makeConstraints { make in
             make.leading.equalTo(26)
-            make.bottom.equalTo(68)
+            make.bottom.equalTo(bestSellerImageView.snp.bottom).inset(-30)
         }
         
         oldPrice.snp.makeConstraints { make in
-            make.leading.equalTo(currentPrice.snp.trailing).inset(20)
+            make.leading.equalTo(currentPrice.snp.trailing).inset(-20)
             make.centerY.equalTo(currentPrice)
         }
         
         brandNameLabel.snp.makeConstraints { make in
             make.leading.equalTo(26)
-            make.bottom.equalTo(20)
+            make.top.equalTo(currentPrice.snp.bottom).inset(-10)
         }
     }
     
@@ -60,15 +61,17 @@ class BestSellerCell: UICollectionViewCell {
 fileprivate extension BestSellerCell {
     private func createBestSellerImageView() -> UIImageView {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.backgroundColor = UIColor(hexString: "FFFFFF")
         return imageView
     }
     
     private func createLikeButton() -> UIButton {
         var config = UIButton.Configuration.filled()
+        config.cornerStyle = .capsule
         config.background.backgroundColor = UIColor(hexString: "FFFFFF")
-        config.image = UIImage(named: "heart")
+        config.image = UIImage(systemName: "heart", withConfiguration: UIImage.SymbolConfiguration(scale: .small))
+        config.baseForegroundColor = UIColor(hexString: "FF6E4E")
         let button = UIButton(configuration: config)
         return button
     }
