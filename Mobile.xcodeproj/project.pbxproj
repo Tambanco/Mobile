@@ -117,7 +117,7 @@
 				4975D47328B139B9000C80DC /* App */,
 				4975D47728B13A8E000C80DC /* ServiceLayer */,
 				4975D46A28B12E76000C80DC /* MainModule */,
-				4975D47428B13A27000C80DC /* Splash */,
+				4975D47428B13A27000C80DC /* Splash Screen */,
 				4975D47628B13A58000C80DC /* Supporting files */,
 				4975D47A28B140A3000C80DC /* Utils */,
 				4975D47E28B146C1000C80DC /* Fonts */,
@@ -172,12 +172,12 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		4975D47428B13A27000C80DC /* Splash */ = {
+		4975D47428B13A27000C80DC /* Splash Screen */ = {
 			isa = PBXGroup;
 			children = (
 				4975D45728B12C0A000C80DC /* LaunchScreen.storyboard */,
 			);
-			path = Splash;
+			path = "Splash Screen";
 			sourceTree = "<group>";
 		};
 		4975D47528B13A40000C80DC /* CoreDataStack */ = {
