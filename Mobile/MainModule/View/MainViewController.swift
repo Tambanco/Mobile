@@ -26,14 +26,14 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.fetchMainData()
+//        presenter.fetchMainData()
         setupMainView()
         setupCategoriesView()
         setupMainCollectionView()
         setupHotSalesView()
         setupBestSellerView()
         
-        print(customCollectionView)
+//        print(customCollectionView)
     }
     
     private func setupMainView() {
@@ -41,13 +41,13 @@ class MainViewController: UIViewController {
     }
     
     private func setupBestSellerView() {
-        bestSellerView = BestSellerView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 400))
+        bestSellerView = BestSellerView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width * 0.92, height: 400))
         customCollectionView.append(bestSellerView)
         
     }
     
     private func setupHotSalesView() {
-        hotSalesView = HotSalesView(frame: CGRect(x: 0, y: 0, width: 360, height: 200))
+        hotSalesView = HotSalesView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width * 0.92, height: 200))
         hotSalesView.layer.cornerRadius = 15
         hotSalesView.layer.masksToBounds = true
         customCollectionView.append(hotSalesView)
@@ -72,7 +72,8 @@ class MainViewController: UIViewController {
         layout.itemSize = CGSize(width: 360, height: 200)
         layout.scrollDirection = .vertical
         mainCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        mainCollectionView.backgroundColor = .systemRed
+        
+        mainCollectionView.backgroundColor = .clear
         
         self.view.addSubview(mainCollectionView)
         mainCollectionView.snp.makeConstraints { make in

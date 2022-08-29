@@ -18,6 +18,10 @@ class BestSellerCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        layer.backgroundColor = UIColor.white.cgColor
+        layer.cornerRadius = 10
+        layer.masksToBounds = true
+        
         addSubview(bestSellerImageView)
         addSubview(likeButton)
         addSubview(currentPrice)
@@ -37,7 +41,7 @@ class BestSellerCell: UICollectionViewCell {
         }
     
         currentPrice.snp.makeConstraints { make in
-            make.leading.equalTo(26)
+            make.leading.equalTo(20)
             make.bottom.equalTo(bestSellerImageView.snp.bottom).inset(-30)
         }
         
@@ -47,7 +51,7 @@ class BestSellerCell: UICollectionViewCell {
         }
         
         brandNameLabel.snp.makeConstraints { make in
-            make.leading.equalTo(26)
+            make.leading.equalTo(20)
             make.top.equalTo(currentPrice.snp.bottom).inset(-10)
         }
     }
@@ -92,7 +96,7 @@ fileprivate extension BestSellerCell {
     
     private func createBrandDescriptionLabel() -> UILabel {
         let label = UILabel()
-        label.font = UIFont(name: "Mark Pro", size: 13)
+        label.font = UIFont(name: "Mark Pro", size: 10)
         label.textColor = UIColor(hexString: "010035")
         return label
     }
