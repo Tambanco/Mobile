@@ -17,11 +17,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         let assemblyBuilder = AssemblyModuleBuilder()
         let tabBar = TabBarViewController()
-        let navigationController = UINavigationController(rootViewController: tabBar)
+        let navigationController = UINavigationController()
+        navigationController.view.backgroundColor = .systemCyan
         let router = Router(navigationController: navigationController, assemblyBuilder: assemblyBuilder)
         router.initialViewController()
-        navigationController.view.backgroundColor = .white
-        window?.rootViewController = navigationController
+
+        window?.rootViewController = tabBar
         window?.makeKeyAndVisible()
     }
 }
