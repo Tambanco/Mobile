@@ -10,6 +10,7 @@ import UIKit
 
 protocol RouterMain {
     var navigationController: UINavigationController? { get set }
+    var tabBarController: UITabBarController? { get set }
     var assemblyBuilder: AssemblyBuilderProtocol? { get set }
 }
 
@@ -19,6 +20,7 @@ protocol RouterProtocol: RouterMain {
 }
 
 class Router: RouterProtocol {
+    var tabBarController: UITabBarController?
     var navigationController: UINavigationController?
     var assemblyBuilder: AssemblyBuilderProtocol?
     
@@ -29,8 +31,8 @@ class Router: RouterProtocol {
     
     func initialViewController() {
         if let navigationController = navigationController {
-            guard let fiatViewController = assemblyBuilder?.createFiatModule(router: self) else { return }
-            navigationController.pushViewController(fiatViewController, animated: true)
+            guard let mainViewController = assemblyBuilder?.createMainModule(router: self) else { return }
+            navigationController.pushViewController(mainViewController, animated: true)
         }
     }
     

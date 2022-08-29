@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 protocol AssemblyBuilderProtocol: AnyObject {
-    func createFiatModule(router: RouterProtocol) -> UIViewController
+    func createMainModule(router: RouterProtocol) -> UIViewController
 }
 
 class AssemblyModuleBuilder: AssemblyBuilderProtocol {
-    func createFiatModule(router: RouterProtocol) -> UIViewController {
+    func createMainModule(router: RouterProtocol) -> UIViewController {
         let networkService = NewtworkService()
         let view = MainViewController()
         let presenter = MainPresenter(router: router, view: view, networkService: networkService)
