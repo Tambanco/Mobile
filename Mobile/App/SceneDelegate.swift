@@ -21,7 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationController.view.backgroundColor = .systemCyan
         let router = Router(navigationController: navigationController, assemblyBuilder: assemblyBuilder)
         router.initialViewController()
-
         window?.rootViewController = tabBar
         window?.makeKeyAndVisible()
     }
